@@ -1,0 +1,26 @@
+[
+    {
+        "name": "Home",
+        "link": "/"
+    },
+    {
+        "name": "Cabinet",
+        "link": "/cabinet"
+    },
+    {
+        "name": "Prom",
+        "link": "/prom"
+    },
+    {
+        "name": "Events",
+        "link": "/events"
+    },
+    {
+        "name": "Resources",
+        "link": "/resources"
+    },
+    {
+        "name": "Magazines",
+        "link": "/magazines"
+    }
+]

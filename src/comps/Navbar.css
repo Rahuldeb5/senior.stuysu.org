@@ -1,0 +1,14 @@
+.navbar {
+  background-color: #f5f5f5;
+  padding: 8px 16px;
+}
+
+.menu {
+  margin-top: 8px;
+  display: flex;
+  flex-direction: column;
+}
+
+.menu-item {
+  margin: 4px 0;
+}

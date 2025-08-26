@@ -1,5 +1,6 @@
-import { BrowserRouter } from "react-router-dom";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
 import Home from "./pages/Home";
+import { Box } from "@mui/material";
 
 function App() {
 
