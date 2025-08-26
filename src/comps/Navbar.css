@@ -54,13 +54,17 @@
   background-color: #322343;
   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
   border: 1px solid #6c5f83;
-  transform: scale(0.85);
+  transform: scale(0.95);
 }
 
 .menu-button .MuiIconButton-root:hover {
   background-color: #6c5f83;
-  transform: scale(0.9);
+  transform: scale(1);
   transition: all 0.2s ease;
+}
+
+.menu-button .MuiSvgIcon-root {
+  font-size: 28px;
 }
 
 @keyframes fadeIn {
