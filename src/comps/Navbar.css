@@ -20,10 +20,10 @@
   flex-direction: column;
   background-color: #322343;
   border-radius: 7px;
-  padding: 6px;
+  padding: 8px;
   box-shadow: 0 3px 10px rgba(0, 0, 0, 1px);
   border: 1px solid #6c5f83;
-  min-width: 130px;
+  min-width: 135px;
   opacity: 0;
   transform: translateY(-15px);
   transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out;
@@ -54,7 +54,7 @@
   border-radius: 3px;
   transition: all 0.2s ease;
   display: block;
-  font-size: 0.9rem;
+  font-size: 1rem;
   font-weight: 700 !important;
   position: relative;
   background: linear-gradient(120deg, #c2b9d7 0%, #6c5f83 100%);
