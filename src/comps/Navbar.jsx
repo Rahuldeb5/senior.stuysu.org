@@ -20,23 +20,20 @@ const Navbar = () => {
           {open ? <CloseIcon /> : <MenuIcon />}
         </IconButton>
       </Box>
-
-      {open && (
-        <Box className="menu">
-          {data.map((e) => (
-            <Box key={e.link} className="menu-item">
-              <Link
-                component={RouterLink}
-                to={e.link}
-                underline="hover"
-                variant="h6"
-              >
-                {e.name}
-              </Link>
-            </Box>
-          ))}
-        </Box>
-      )}
+      <Box className={`menu ${open ? 'visible' : 'hidden'}`}>
+        {data.map((e) => (
+          <Box key={e.link} className="menu-item">
+            <Link
+              component={RouterLink}
+              to={e.link}
+              underline="hover"
+              variant="h6"
+            >
+              {e.name}
+            </Link>
+          </Box>
+        ))}
+      </Box>
     </Box>
   );
 };
