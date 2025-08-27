@@ -91,7 +91,7 @@
   content: "";
   position: absolute;
   top: 50%;
-  left: 1px;
+  left: 7px;
   right: auto;
   transform: translateY(-50%);
   width: 25px;
