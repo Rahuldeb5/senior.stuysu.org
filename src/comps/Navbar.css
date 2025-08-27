@@ -20,10 +20,10 @@
   flex-direction: column;
   background-color: #322343;
   border-radius: 7px;
-  padding: 8px;
+  padding: 12px;
   box-shadow: 0 3px 10px rgba(0, 0, 0, 1px);
   border: 1px solid #6c5f83;
-  min-width: 135px;
+  min-width: 150px;
   opacity: 0;
   transform: translateY(-15px);
   transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out;
@@ -50,7 +50,7 @@
 .menu-item .MuiLink-root {
   color: #fff2e2;
   text-decoration: none;
-  padding: 6px 10px;
+  padding: 15px 10px 6px 34px;
   border-radius: 3px;
   transition: all 0.2s ease;
   display: block;
@@ -85,5 +85,50 @@
 
 .menu-button .MuiSvgIcon-root {
   font-size: 28px;
+}
+
+.menu-item .MuiLink-root::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 1px;
+  right: auto;
+  transform: translateY(-50%);
+  width: 25px;
+  height: 25px;
+  background-size: cover;
+  background-repeat: no-repeat;
+  opacity: 0.9;
+  pointer-events: none;
+  transition: opacity 0.2s ease;
+}
+
+.menu-item .MuiLink-root:hover::after,
+.menu-item .MuiLink-root:focus-visible::after {
+  opacity: 1;
+}
+
+.menu .menu-item:nth-child(1) .MuiLink-root::after {
+  background-image: url('images/homeicon.png');
+}
+
+.menu .menu-item:nth-child(2) .MuiLink-root::after {
+  background-image: url('images/cabineticon.png');
+}
+
+.menu .menu-item:nth-child(3) .MuiLink-root::after {
+  background-image: url('images/promicon.png');
+}
+
+.menu .menu-item:nth-child(4) .MuiLink-root::after {
+  background-image: url('images/eventsicon.png');
+}
+
+.menu .menu-item:nth-child(5) .MuiLink-root::after {
+  background-image: url('images/resourcesicon.png');
+}
+
+.menu .menu-item:nth-child(6) .MuiLink-root::after {
+  background-image: url('images/magazinesicon.png');
 }
 
