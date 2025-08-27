@@ -4,7 +4,7 @@ import { useState } from "react";
 import MenuIcon from "@mui/icons-material/Menu";
 import CloseIcon from "@mui/icons-material/Close";
 import { Link as RouterLink } from "react-router-dom";
-import data from "../data/webpages.json";
+import WebpagesData from "../data/webpages.json";
 
 const Navbar = () => {
   const [open, setOpen] = useState(false);
@@ -21,7 +21,7 @@ const Navbar = () => {
         </IconButton>
       </Box>
       <Box className={`menu ${open ? 'visible' : 'hidden'}`}>
-        {data.map((e) => (
+        {WebpagesData.map((e) => (
           <Box key={e.link} className="menu-item">
             <Link
               component={RouterLink}
