@@ -1,0 +1,103 @@
+.cabinet {
+  background: linear-gradient(135deg, #fff2e2 0%, #fcfffc 50%, #ded4f1 100%);
+  min-height: 100vh;
+  padding: 2rem 0;
+  width: 100vw;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+.cabinet-member {
+  margin: 4rem 0;
+  width: 100%;
+  padding: 0;
+}
+
+.member-section {
+  display: flex !important;
+  width: 100%;
+  gap: 3rem;
+  align-items: stretch;
+  padding: 0 4rem;
+  box-sizing: border-box;
+}
+
+.img-card {
+  flex: 0 0 400px;
+  border-radius: 20px !important;
+  overflow: hidden !important;
+  box-shadow: 0 8px 32px rgba(50, 35, 67, 0.15) !important;
+  transition: transform 0.3s ease, box-shadow 0.3s ease !important;
+  background: rgba(252, 255, 252, 0.95) !important;
+  border: 1px solid rgba(222, 212, 241, 0.3) !important;
+  text-align: center;
+}
+
+.img-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 40px rgba(50, 35, 67, 0.2) !important;
+}
+
+.img-card img {
+  width: 100%;
+  height: 300px;
+  object-fit: cover;
+  object-position: center;
+}
+
+.member-name {
+  font-size: 2rem !important;
+  font-weight: 600 !important;
+  color: #322343 !important;
+  padding: 1.5rem 2rem !important;
+  margin: 0 !important;
+  text-transform: capitalize !important;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif !important;
+  letter-spacing: 1px !important;
+  background: linear-gradient(135deg, #ded4f1, #c2b9d7);
+}
+
+.bio-card {
+  flex: 0 0 450px;
+  max-width: 450px;
+  border-radius: 20px !important;
+  box-shadow: 0 8px 32px rgba(108, 95, 131, 0.2) !important;
+  transition: transform 0.3s ease, box-shadow 0.3s ease !important;
+  background: rgba(222, 212, 241, 0.95) !important;
+  border: 1px solid rgba(194, 185, 215, 0.4) !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  padding: 2.5rem 2rem !important;
+  box-sizing: border-box;
+}
+
+.bio-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 40px rgba(108, 95, 131, 0.3) !important;
+}
+
+.bio {
+  font-size: 1.6rem !important;
+  font-weight: 400 !important;
+  color: #322343 !important;
+  text-align: center !important;
+  line-height: 1.8 !important;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif !important;
+  letter-spacing: 0.5px !important;
+  margin: 0 !important;
+}
+
+.cabinet-member:nth-child(even) .img-card {
+  background: rgba(194, 185, 215, 0.95) !important;
+}
+
+.cabinet-member:nth-child(even) .bio-card {
+  background: rgba(252, 255, 252, 0.95) !important;
+}
+
+.cabinet-member:nth-child(even) .member-name {
+  background: linear-gradient(135deg, #c2b9d7, #6c5f83);
+  color: #fff2e2 !important;
+}
+

@@ -1,14 +1,18 @@
 [
     {
         "img": "images/cabinet/muzamil.png",
-        "bio": "muzamil"
+        "name": "muzamil",
+        "bio": "poop3"
     },
     {
         "img": "images/cabinet/mr_greedy.png",
-        "bio": "mr greedy"
+        "name": "mr greedy",
+        "bio": "poop3"
     },
     {
         "img": "images/cabinet/ronaldo.png",
-        "bio": "ronaldo"
+        "name": "ronaldo",
+        "bio": "poop3"
+
     }
 ]

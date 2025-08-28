@@ -18,12 +18,13 @@ const Cabinet = () => {
             }}
           >
             <Card className="img-card">
-              <CardMedia component="img" image={e.img} alt={e.bio} />
+              <CardMedia component="img" image={e.img} alt={e.name} />
+              <Typography className="member-name">{e.name}</Typography>
             </Card>
 
-            <Box className="member-bio">
+            <Card className="bio-card">
               <Typography className="bio">{e.bio}</Typography>
-            </Box>
+            </Card>
           </Box>
         </Box>
       ))}
