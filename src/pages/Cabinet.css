@@ -8,7 +8,7 @@
 }
 
 .cabinet-member {
-  margin: 4rem 0;
+  margin: 10rem 0;
   width: 100%;
   padding: 0;
 }
@@ -16,8 +16,8 @@
 .member-section {
   display: flex !important;
   width: 100%;
-  gap: 3rem;
-  align-items: stretch;
+  gap: 10rem;
+  align-items: center;
   padding: 0 4rem;
   box-sizing: border-box;
 }
@@ -38,11 +38,26 @@
   box-shadow: 0 12px 40px rgba(50, 35, 67, 0.2) !important;
 }
 
+.member-role {
+  font-size: 1.2rem !important;
+  font-weight: 500 !important;
+  color: #6c5f83 !important;
+  text-align: center !important;
+  padding: 1rem 2rem 0.5rem 2rem !important;
+  margin: 0 !important;
+  text-transform: uppercase !important;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif !important;
+  letter-spacing: 1.5px !important;
+  background: transparent !important;
+}
+
 .img-card img {
-  width: 100%;
+  width: calc(100% - 2rem);
   height: 300px;
   object-fit: cover;
   object-position: center;
+  margin: 1rem;
+  border-radius: 12px;
 }
 
 .member-name {
@@ -60,6 +75,7 @@
 .bio-card {
   flex: 0 0 450px;
   max-width: 450px;
+  height: 250px;
   border-radius: 20px !important;
   box-shadow: 0 8px 32px rgba(108, 95, 131, 0.2) !important;
   transition: transform 0.3s ease, box-shadow 0.3s ease !important;

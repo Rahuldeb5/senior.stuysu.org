@@ -1,7 +1,7 @@
 import { Box, Card, CardMedia, Typography } from "@mui/material";
-import "./Cabinet.css";
-import CabinetData from "../data/cabinet.json";
 import Navbar from "../comps/Navbar";
+import CabinetData from "../data/cabinet.json";
+import "./Cabinet.css";
 
 const Cabinet = () => {
   return (
@@ -18,6 +18,7 @@ const Cabinet = () => {
             }}
           >
             <Card className="img-card">
+              <Typography className="member-role">{e.role}</Typography>
               <CardMedia component="img" image={e.img} alt={e.name} />
               <Typography className="member-name">{e.name}</Typography>
             </Card>

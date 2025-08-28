@@ -2,17 +2,26 @@
     {
         "img": "images/cabinet/muzamil.png",
         "name": "muzamil",
-        "bio": "poop3"
+        "bio": "poop3",
+        "role": "Co-President"
+        
     },
     {
         "img": "images/cabinet/mr_greedy.png",
         "name": "mr greedy",
-        "bio": "poop3"
+        "bio": "poop3",
+        "role": "Co-President"
     },
     {
         "img": "images/cabinet/ronaldo.png",
         "name": "ronaldo",
-        "bio": "poop3"
-
+        "bio": "poop3",
+        "role": "Company President"
+    },
+    {
+        "img": "images/cabinet/ronaldo.png",
+        "name": "ronaldo",
+        "bio": "poop3",
+        "role": "Company President"
     }
 ]
