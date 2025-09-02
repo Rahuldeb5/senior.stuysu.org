@@ -5,20 +5,85 @@
   width: 100vw;
   margin: 0;
   box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.cabinet-heading-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 4rem 2rem 2rem 2rem;
+}
+
+.cabinet-heading {
+  font-size: 3.5rem !important;
+  font-weight: 700 !important;
+  color: #322343 !important;
+  text-align: center !important;
+  text-transform: uppercase !important;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif !important;
+  letter-spacing: 3px !important;
+  background: linear-gradient(135deg, #322343 0%, #6c5f83 50%, #322343 100%);
+  background-clip: text !important;
+  -webkit-background-clip: text !important;
+  -webkit-text-fill-color: transparent !important;
+  text-shadow: 0 4px 8px rgba(50, 35, 67, 0.2) !important;
+  position: relative !important;
+  animation: headingGlow 3s ease-in-out infinite alternate !important;
+}
+
+.cabinet-heading::before {
+  content: '';
+  position: absolute;
+  top: -10px;
+  left: -20px;
+  right: -20px;
+  bottom: -10px;
+  background: linear-gradient(45deg, rgba(222, 212, 241, 0.3), rgba(194, 185, 215, 0.3));
+  border-radius: 15px;
+  z-index: -1;
+  filter: blur(10px);
+  animation: headingBackground 4s ease-in-out infinite alternate !important;
+}
+
+@keyframes headingGlow {
+  0% {
+    filter: drop-shadow(0 0 5px rgba(108, 95, 131, 0.3));
+  }
+  100% {
+    filter: drop-shadow(0 0 15px rgba(108, 95, 131, 0.6));
+  }
+}
+
+@keyframes headingBackground {
+  0% {
+    opacity: 0.5;
+    transform: scale(1);
+  }
+  100% {
+    opacity: 0.8;
+    transform: scale(1.05);
+  }
 }
 
 .cabinet-member {
-  margin: 10rem 0;
+  margin: 6rem 0;
   width: 100%;
   padding: 0;
+  display: flex;
+  justify-content: center;
 }
 
 .member-section {
   display: flex !important;
   width: 100%;
-  gap: 10rem;
+  max-width: 1400px;
+  gap: 6rem;
   align-items: center;
-  padding: 0 4rem;
+  padding: 0 6rem;
+  margin: 0 auto;
   box-sizing: border-box;
 }
 
@@ -73,9 +138,9 @@
 }
 
 .bio-card {
-  flex: 0 0 450px;
-  max-width: 450px;
-  height: 250px;
+  flex: 0 0 550px;
+  max-width: 550px;
+  height: 350px;
   border-radius: 20px !important;
   box-shadow: 0 8px 32px rgba(108, 95, 131, 0.2) !important;
   transition: transform 0.3s ease, box-shadow 0.3s ease !important;

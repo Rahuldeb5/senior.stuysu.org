@@ -6,7 +6,7 @@ import "./Cabinet.css";
 const Cabinet = () => {
   return (
     <Box className="cabinet">
-      <Navbar />
+      <Navbar />  
       <Box className="cabinet-heading-container">
         <Typography className="cabinet-heading">
           OUR CABINET
@@ -26,7 +26,6 @@ const Cabinet = () => {
               <CardMedia component="img" image={e.img} alt={e.name} />
               <Typography className="member-name">{e.name}</Typography>
             </Card>
-
             <Card className="bio-card">
               <Typography className="bio">{e.bio}</Typography>
             </Card>
