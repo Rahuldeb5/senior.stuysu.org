@@ -7,7 +7,11 @@ const Cabinet = () => {
   return (
     <Box className="cabinet">
       <Navbar />
-
+      <Box className="cabinet-heading-container">
+        <Typography className="cabinet-heading">
+          OUR CABINET
+        </Typography>
+      </Box>
       {CabinetData.map((e, index) => (
         <Box className="cabinet-member" key={index}>
           <Box
