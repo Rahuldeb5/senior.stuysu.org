@@ -1,15 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700&display=swap');
 
-/* Global body styling */
-body {
-  font-family: 'Montserrat', 'Helvetica Neue', Helvetica, Arial, sans-serif;
-  background-color: #fcfffc;
-  color: #322343;
-  margin: 0;
-  padding: 40px 20px;
-  line-height: 1.5;
-}
-
 /* Centered page container */
 .container {
   max-width: 1200px;
@@ -83,12 +73,13 @@ body {
   font-weight: 500;
   padding: 6px 12px;
   margin: 0 2px;
-  cursor: pointer;
   transition: all 0.2s ease;
+  cursor: none;
 }
 
 .fc-button:hover {
   background-color: #322343;
+  cursor: none;
 }
 
 .fc-button:disabled {
@@ -135,10 +126,12 @@ body {
   background-color: #6c5f83;
   color: #fcfffc;
   font-weight: 500;
+  cursor: none;
 }
 
 .fc-event:hover {
   background-color: #322343;
+  cursor: none;
 }
 
 /* Now indicator */
@@ -196,13 +189,14 @@ body {
   padding: 8px 16px;
   font-weight: 500;
   font-size: 0.9rem;
-  cursor: pointer;
   transition: all 0.2s ease;
+  cursor: none;
 }
 
 .gc-button:hover {
   background-color: #322343;
   border-color: #322343;
+  cursor: none;
 }
 
 .gc-button:active {

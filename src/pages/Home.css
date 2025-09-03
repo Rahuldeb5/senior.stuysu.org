@@ -1,20 +1,62 @@
-body {
+.home-container {
   margin: 0;
   padding: 0;
+  background-image: url('../../images/background_1.png');
   background-size: cover;
   background-position: center;
-  background-repeat: no-repeat;
-  background-attachment: fixed;
-  min-height: 100vh;
+  background-color: #322343; 
 }
 
-.home-container {
-  min-height: 100vh;
+.scroll-placeholder {
+  height: 200vh;
   display: flex;
-  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  font-size: 2rem;
 }
 
-.home-page {
-  min-height: 100vh;
-  width: 100%;
+.home-title-image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  padding: 20px;
+  z-index: 10;
+  max-width: 40vw;
+  height: auto;
+}
+
+.hero-section {
+    background: linear-gradient(to bottom, #322343, #4c3f83);
+    color: #fff2e2;
+    padding: 4rem 2rem;
+    text-align: center;
+}
+
+.home-card {
+    border: 1px solid #ded4f1 !important;
+    border-radius: 12px !important;
+    box-shadow: 0 4px 12px rgba(50, 35, 67, 0.1) !important;
+    transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out !important;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+.home-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 24px rgba(50, 35, 67, 0.15) !important;
+}
+
+.home-card .MuiCardContent-root {
+    flex-grow: 1;
+}
+
+.home-card .MuiCardActions-root {
+    justify-content: flex-end;
+}
+
+.home-card .MuiButton-root {
+    color: #6c5f83 !important;
+    font-weight: bold !important;
 }
