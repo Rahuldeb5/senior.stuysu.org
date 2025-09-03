@@ -1,5 +1,6 @@
 import { Box, Card, CardMedia, Typography } from "@mui/material";
-import { useEffect, useState, useCallback, useRef } from "react";
+import { useCallback, useEffect, useRef, useState } from "react";
+import { useLocation } from "react-router-dom";
 import Navbar from "../comps/Navbar";
 import CabinetData from "../data/cabinet.json";
 import "./Cabinet.css";
@@ -8,9 +9,35 @@ const Cabinet = () => {
   const [headingVisible, setHeadingVisible] = useState(true);
   const [contentVisible, setContentVisible] = useState(false);
   const [animatedCards, setAnimatedCards] = useState(new Set());
+  const [isInitialLoad, setIsInitialLoad] = useState(true);
+  const [fadeInComplete, setFadeInComplete] = useState(false);
   const cardRefs = useRef([]);
   const scrollTimeoutRef = useRef(null);
+  const location = useLocation();
+
+  useEffect(() => {
+    if (isInitialLoad) {
+      document.body.style.overflow = 'hidden';
+      const timer = setTimeout(() => {
+      setFadeInComplete(true); 
+      setTimeout(() => {
+        document.body.style.overflow = 'auto';
+      }, 1500); 
+    }, 100);
+      return () => {
+        clearTimeout(timer);
+        document.body.style.overflow = 'auto';
+      };
+    }
+  }, [isInitialLoad]);
+  useEffect(() => {
+    setIsInitialLoad(true);
+    setFadeInComplete(false);
+  }, [location.pathname]);
+
   const handleScroll = useCallback(() => {
+    if (!fadeInComplete) return; 
+  
   const scrollY = window.scrollY;
   const windowHeight = window.innerHeight;
     
@@ -24,18 +51,17 @@ const Cabinet = () => {
   } else {
     setContentVisible(false);
   }
-  }, []);
+  }, [fadeInComplete]);
 
   useEffect(() => {
+    if (!fadeInComplete) return; 
     const throttledScroll = () => {
       if (scrollTimeoutRef.current) return;
-      
       scrollTimeoutRef.current = setTimeout(() => {
         handleScroll();
         scrollTimeoutRef.current = null;
       }, 16); 
     };
-
     window.addEventListener('scroll', throttledScroll, { passive: true });
     return () => {
       window.removeEventListener('scroll', throttledScroll);
@@ -43,11 +69,9 @@ const Cabinet = () => {
         clearTimeout(scrollTimeoutRef.current);
       }
     };
-  }, [handleScroll]);
-
+  }, [handleScroll, fadeInComplete]);
   useEffect(() => {
     if (!contentVisible) return;
-
     const observer = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
@@ -66,19 +90,16 @@ const Cabinet = () => {
         rootMargin: '0px 0px -50px 0px'
       }
     );
-
     cardRefs.current.forEach((ref) => {
       if (ref) observer.observe(ref);
     });
-
     return () => observer.disconnect();
   }, [contentVisible]);
-
   return (
     <Box className="cabinet">
       <Navbar />
-      
-      <Box className={`cabinet-heading-container ${!headingVisible ? 'fade-out' : ''}`}>
+      <Box className={`fade-in-overlay ${fadeInComplete ? 'fade-out' : ''}`} />
+      <Box className={`cabinet-heading-container ${!headingVisible ? 'fade-out' : ''} ${fadeInComplete ? 'fade-in-complete' : ''}`}>
         <Typography className="cabinet-heading">
           OUR CABINET
         </Typography>

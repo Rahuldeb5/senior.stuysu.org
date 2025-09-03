@@ -11,6 +11,23 @@
   position: relative;
 }
 
+.fade-in-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: #000;
+  z-index: 2000;
+  transition: opacity 1.5s ease-out;
+  opacity: 1;
+}
+
+.fade-in-overlay.fade-out {
+  opacity: 0;
+  pointer-events: none;
+}
+
 .cabinet-heading-container {
   display: flex;
   justify-content: center;
@@ -22,19 +39,41 @@
   width: 100vw;
   height: 100vh;
   background: linear-gradient(135deg, #2d1b3d 0%, #4a2c5a 50%, #2d1b3d 100%);
+  background-size: 100% 100%;
   z-index: 1000;
   transition: opacity 0.6s ease-out, transform 0.6s ease-out;
   display: flex;
   justify-content: center;
   align-items: center;
-  transform: translateY(-20vh);
-  padding-top: 8rem;
+  padding-top: 0;
+  padding-bottom: 0;
+  margin: 0;
+  box-sizing: border-box;
+  opacity: 1;
+  animation: fadeInFromBlack 1.5s ease-out forwards;
+  animation-delay: 0.1s;
+}
+
+.cabinet-heading-container.fade-in-complete {
+  opacity: 1;
+  animation: none;
 }
 
 .cabinet-heading-container.fade-out {
   opacity: 0;
   transform: translateY(-60px);
   pointer-events: none;
+}
+
+@keyframes fadeInFromBlack {
+  0% {
+    background: linear-gradient(135deg, #000 0%, #000 50%, #000 100%);
+    background-size: 100% 100%;
+  }
+  100% {
+    background: linear-gradient(135deg, #2d1b3d 0%, #4a2c5a 50%, #2d1b3d 100%);
+    background-size: 100% 100%;
+  }
 }
 
 .cabinet-heading {
@@ -51,7 +90,8 @@
   -webkit-text-fill-color: transparent !important;
   text-shadow: 0 4px 8px rgba(0, 0, 0, 0.3) !important;
   position: relative !important;
-  animation: headingGlow 3s ease-in-out infinite alternate !important;
+  animation: headingGlow 3s ease-in-out infinite !important;
+  will-change: filter !important;
 }
 
 .cabinet-heading::before {
@@ -65,26 +105,27 @@
   border-radius: 20px;
   z-index: -1;
   filter: blur(15px);
-  animation: headingBackground 4s ease-in-out infinite alternate !important;
+  animation: headingBackground 3s ease-in-out infinite !important;
+  will-change: opacity, transform !important;
 }
 
 @keyframes headingGlow {
-  0% {
-    filter: drop-shadow(0 0 8px rgba(255, 242, 226, 0.4));
+  0%, 100% {
+    filter: drop-shadow(0 0 10px rgba(255, 242, 226, 0.4));
   }
-  100% {
+  50% {
     filter: drop-shadow(0 0 20px rgba(255, 242, 226, 0.8));
   }
 }
 
 @keyframes headingBackground {
-  0% {
-    opacity: 0.6;
+  0%, 100% {
+    opacity: 0.5;
     transform: scale(1);
   }
-  100% {
-    opacity: 0.9;
-    transform: scale(1.08);
+  50% {
+    opacity: 0.8;
+    transform: scale(1.02);
   }
 }
 
