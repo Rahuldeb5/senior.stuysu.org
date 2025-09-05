@@ -19,7 +19,7 @@ const Footer = () => {
                                 className="icon-image"
                             />
                         </Link>
-                        <Link href="#" target="_blank" rel="noopener noreferrer" className="link-item">
+                        <Link href="https://www.instagram.com/stuyseniorcaucus/" target="_blank" rel="noopener noreferrer" className="link-item">
                             <Box
                                 component="img" 
                                 src="/images/instagram-logo-transparent.png" 
@@ -39,7 +39,7 @@ const Footer = () => {
                     <Typography variant="p" className="info-text">© Stuyvesant High School 2025-26</Typography>
                 </Box>
                 <Box className="logo-section">
-                    <Link href="https://en.wikipedia.org/wiki/Stuyvesant_High_School" target="_blank" rel="noopener noreferrer" className="link-item">
+                    <Link href="https://stuy.enschool.org/" target="_blank" rel="noopener noreferrer" className="link-item">
                         <Box
                             component="img" 
                             src="/images/stuyvesant-high-school-logo-transparent.png" 
