@@ -53,7 +53,7 @@ const Footer = () => {
                         <Typography variant="p" className="footer-text credits-title">Credits:</Typography>
                         <Typography variant="p" className="info-text">Co-Presidents: Vanna Lei & Amy Zhou</Typography>
                         <Typography variant="p" className="info-text">Development Leads: Rahul Deb & Jiewen Huang</Typography>
-                        <Typography variant="p" className="info-text">Junior Caucus IT Team:</Typography>
+                        <Typography variant="p" className="info-text">Senior Caucus IT Team:</Typography>
                         <Typography variant="p" className="footer-text team-list"> Ardian Agoes | David Lee | Kalimul Kaif | Kanchanok Zhang (Ting Ting)</Typography>
                     </Box>
                 </Box>
