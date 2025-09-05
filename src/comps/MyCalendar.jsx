@@ -81,11 +81,23 @@ export default function MyCalendar() {
         calendarInstance.current = calendar;
     }, [])
 
+    // window resizing -> calendar resizing 
     useEffect(() => {
-        // change calendar view when window is resized using window listener
+        let timer;
+
         const handleResize = () => {
-            const targetView = getResponsiveView();
-            changeView(targetView);
+            // debounce resizing
+
+            clearTimeout(timer);
+            timer = setTimeout(
+                () => {
+                    const targetView = getResponsiveView();
+                    const currentView = calendarInstance.current?.view.type;
+                    if (targetView !== currentView)  {
+                        changeView(targetView);
+                    }
+                },
+                300);
         };
 
         window.addEventListener('resize', handleResize);
@@ -126,6 +138,7 @@ export default function MyCalendar() {
         }
     }
 
+    // 💀
     return (
         <Box className="min-h-screen bg-gradient-to-b from-[#fcfffc] to-[#fff2e2] font-montserrat py-12 flex flex-col items-center">
             <Box className="text-center mb-12 w-full max-w-3xl px-4 mx-auto">
