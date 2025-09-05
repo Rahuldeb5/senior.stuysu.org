@@ -6,6 +6,7 @@ import dayGridPlugin from '@fullcalendar/daygrid';
 import timeGridPlugin from '@fullcalendar/timegrid';
 import listPlugin from '@fullcalendar/list';
 import googleCalendarPlugin from '@fullcalendar/google-calendar';
+import { Box, Button, Typography } from "@mui/material";
 
 export default function MyCalendar() {
     const calendarRef = useRef(null);
@@ -42,7 +43,7 @@ export default function MyCalendar() {
             headerToolbar: {
                 left: 'prev,next,today',
                 center: 'title',
-                right: 'listWeek,dayGridMonth,timeGridWeek'
+                right: ''
             },
 
             loading: (isLoadingEvents) => {
@@ -126,28 +127,25 @@ export default function MyCalendar() {
     }
 
     return (
-        <div className="min-h-screen bg-gradient-to-b from-[#fcfffc] to-[#fff2e2] font-montserrat py-12 flex flex-col items-center">
-            <div className="text-center mb-12 w-full max-w-3xl px-4 mx-auto">
-                <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold bg-gradient-to-r from-[#6c5f83] to-[#c2b9d7] bg-clip-text text-transparent mb-4">
+        <Box className="min-h-screen bg-gradient-to-b from-[#fcfffc] to-[#fff2e2] font-montserrat py-12 flex flex-col items-center">
+            <Box className="text-center mb-12 w-full max-w-3xl px-4 mx-auto">
+                <Typography variant="h1" className="text-4xl sm:text-5xl md:text-6xl font-bold bg-gradient-to-r from-[#6c5f83] to-[#c2b9d7] bg-clip-text text-transparent mb-4">
                     Event Calendar
-                </h1>
-                <p className="text-lg sm:text-xl text-[#322343]">
-                    Yay i love senior caucus goon goon goon goon goon goon goon!
-                </p>
-            </div>
+                </Typography>
+            </Box>
             
-            <div className="w-full max-w-4xl mx-auto bg-white/90 backdrop-blur-sm rounded-2xl shadow-xl border border-[#ded4f1] p-6 sm:p-8">
-                {error && <div className="gc-error">{error}</div>}
-                {isLoading && <div className="gc-loading">Loading events...</div>}
+            <Box className="w-full max-w-4xl mx-auto bg-white/90 backdrop-blur-sm rounded-2xl shadow-xl border border-[#ded4f1] p-6 sm:p-8">
+                {error && <Box className="gc-error">{error}</Box>}
+                {isLoading && <Box className="gc-loading">Loading events...</Box>}
         
-                <div className="gc-buttons">
-                    <button className="gc-button" onClick={() => changeView('listWeek')}>List View</button>
-                    <button className="gc-button" onClick={() => changeView('dayGridMonth')}>Month View</button>
-                    <button className="gc-button" onClick={() => changeView('timeGridWeek')}>Week View</button>
-                </div>
+                <Box className="gc-buttons">
+                    <Button className="gc-button" onClick={() => changeView('listWeek')}>List View</Button>
+                    <Button className="gc-button" onClick={() => changeView('dayGridMonth')}>Month View</Button>
+                    <Button className="gc-button" onClick={() => changeView('timeGridWeek')}>Week View</Button>
+                </Box>
         
-                <div ref={calendarRef} className="gc-calendar"></div>
-            </div>
-        </div>
+                <Box ref={calendarRef} className="gc-calendar"></Box>
+            </Box>
+        </Box>
     )
 }

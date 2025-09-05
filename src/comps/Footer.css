@@ -1,0 +1,120 @@
+.main-footer {
+    background-color: #c2b9d7;
+    color: white;
+    width: 100%;
+    padding: 20px 0;
+    /* border-top: 2px solid rgb(221, 221, 221); */
+    border-top: 3px solid rgba(221, 221, 221, 1);
+    margin-top: auto;
+    position: relative;
+    backdrop-filter: blur(5px);
+}
+
+.content-wrapper {
+    width: 100%;
+    padding: 0 20px;
+    box-sizing: border-box;
+    display: flex;
+    justify-content: space-between;
+    align-items: stretch;
+    gap: 40px;
+    position: relative;
+}
+
+.info-text {
+    margin: 6px 0;
+    font-size: 16px;
+    line-height: 1.8;
+    color: white;
+}
+
+.info-section {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    gap: 10px;
+    align-items: flex-start;
+}
+
+.logo-section {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.brand-logo {
+    width: 160px;
+    height: auto;
+}
+
+.credits-section {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    text-align: right;
+}
+
+.brand-header {
+    text-align: left;
+}
+
+.main-title {
+    margin: 0;
+    font-size: 28px;
+    font-weight: bold;
+    color: #322343;
+}
+
+.credits-content {
+    text-align: right;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    flex-grow: 1;
+}
+
+.team-list {
+    text-align: right;
+}
+
+.social-links {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 20px;
+}
+
+.link-item {
+    display: inline-block;
+    transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.link-item:hover {
+    transform: scale(1.2);
+}
+
+.location-text {
+    color: #322343;
+}
+
+.icon-image {
+    width: 60px;
+    height: 60px;
+    transition: transform 0.3s ease;
+}
+
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+
+#root {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}

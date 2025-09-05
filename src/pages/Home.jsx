@@ -3,8 +3,8 @@ import Navbar from "../comps/Navbar";
 import LoadingAnimation from "../comps/LoadingAnimation";
 import { useState, useEffect } from 'react';
 import "./Home.css";
-import backgroundImage from '../../images/background_1.png';
 import seniorCaucusTitleImage from '../../images/senior_caucus_title.png'; 
+import Footer from "../comps/Footer";
 
 const Home = () => {
     const [loading, setLoading] = useState(true);
@@ -19,12 +19,14 @@ const Home = () => {
             {!loading && (
                 <>
                     <Navbar />
-                    <img src={seniorCaucusTitleImage} alt="Stuy senior caucus" className="home-title-image" />
+                    <Box component="img" src={seniorCaucusTitleImage} alt="Stuy senior caucus" className="home-title-image" />
                     <Box className="scroll-placeholder">
                         Scroll down to see more content!
                     </Box>
                 </>
             )}
+            <Navbar />
+            <Footer />
         </Box>
     );
 }

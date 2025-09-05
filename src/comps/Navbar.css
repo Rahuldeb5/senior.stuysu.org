@@ -2,7 +2,7 @@
   position: fixed;
   top: 20px;
   right: 20px;
-  z-index: 1000;
+  z-index: 1001;
   display: flex;
   flex-direction: column;
   align-items: flex-end;
@@ -112,26 +112,26 @@
 }
 
 .menu .menu-item:nth-child(1) .MuiLink-root::after {
-  background-image: url('images/homeicon.png');
+  background-image: url('/images/navbarIcons/homeicon.png');
 }
 
 .menu .menu-item:nth-child(2) .MuiLink-root::after {
-  background-image: url('images/cabineticon.png');
+  background-image: url('/images/navbarIcons/cabineticon.png');
 }
 
 .menu .menu-item:nth-child(3) .MuiLink-root::after {
-  background-image: url('images/promicon.png');
+  background-image: url('/images/navbarIcons/promicon.png');
 }
 
 .menu .menu-item:nth-child(4) .MuiLink-root::after {
-  background-image: url('images/eventsicon.png');
+  background-image: url('/images/navbarIcons/eventsicon.png');
 }
 
 .menu .menu-item:nth-child(5) .MuiLink-root::after {
-  background-image: url('images/resourcesicon.png');
+  background-image: url('/images/navbarIcons/resourcesicon.png');
 }
 
 .menu .menu-item:nth-child(6) .MuiLink-root::after {
-  background-image: url('images/magazinesicon.png');
+  background-image: url('/images/navbarIcons/magazinesicon.png');
 }
 
