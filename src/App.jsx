@@ -1,6 +1,7 @@
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import Home from "./pages/Home";
 import Cabinet from "./pages/Cabinet";
+import Events from "./pages/Events";
 import { Box } from "@mui/material";
 
 function App() {
@@ -11,6 +12,7 @@ function App() {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="*" element={<Home />} />
+          <Route path="/events" element={<Events />} />
           <Route path="/cabinet" element={<Cabinet />} />
         </Routes>
       </BrowserRouter>
