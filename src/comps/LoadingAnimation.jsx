@@ -30,6 +30,14 @@ const LoadingAnimation = ({ onAnimationComplete }) => {
   return (
     <div className={`loading-container ${phase}`}>
       <div className="animation-element"></div>
+      <div className="text-container">
+        <div className="text stuyvesant-wrapper">
+          <div className="text-inner">Stuyvesant</div>
+        </div>
+        <div className="text senior-caucus-wrapper">
+          <div className="text-inner">Senior Caucus</div>
+        </div>
+      </div>
     </div>
   );
 };
