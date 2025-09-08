@@ -178,7 +178,7 @@
 }
 
 .img-card {
-  flex: 0 0 400px;
+  flex: 0 0 450px; 
   border-radius: 20px !important;
   overflow: hidden !important;
   box-shadow: 0 8px 32px rgba(50, 35, 67, 0.15) !important;
@@ -208,8 +208,8 @@
 
 .img-card img {
   width: calc(100% - 2rem);
-  height: 300px;
-  object-fit: cover;
+  height: 550px; 
+  object-fit: cover; 
   object-position: center;
   margin: 1rem;
   border-radius: 12px;
