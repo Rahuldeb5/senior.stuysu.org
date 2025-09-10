@@ -21,16 +21,16 @@
 .animation-element {
   background-color: #fef3e1;
   border-radius: 50%;
-  width: 10px;
-  height: 10px;
-  transition: all 0.5s cubic-bezier(0.68, -0.55, 0.27, 1.55);
+  width: 15px;
+  height: 15px;
+  transition: all 0.8s ease-in-out;
   position: relative;
 }
 
 .loading-container.lineAcrossScreen .animation-element {
   border-radius: 0;
   width: 100vw;
-  height: 2px;
+  height: 6px;
 }
 
 .text-container {
@@ -42,30 +42,30 @@
   justify-content: center;
   align-items: center;
   opacity: 0;
-  transition: opacity 0.3s ease-in-out;
+  transition: opacity 1.2s ease-out;
 }
+
+.loading-container.circle .text-container {
+  opacity: 0;
+}
+
 
 .loading-container.lineAcrossScreen .text-container {
   opacity: 1;
+  transition: opacity 0.3s ease-in-out;
 }
 
 .text {
   font-family: 'Helvetica Neue', sans-serif;
-  font-size: 4rem; 
+  font-size: 4rem;
   font-weight: bold;
   color: #fef3e1;
 }
 
-.stuyvesant-wrapper {
-  height: 4rem; 
+.stuyvesant-wrapper, .senior-caucus-wrapper {
+  height: 4rem;
   display: flex;
-  align-items: flex-end;
-}
-
-.senior-caucus-wrapper {
-  height: 4rem; 
-  display: flex;
-  align-items: flex-start;
+  align-items: center;
 }
 
 .text-inner {
@@ -78,11 +78,7 @@
   transform: translateY(-100%);
 }
 
-.loading-container.lineAcrossScreen .stuyvesant-wrapper .text-inner {
-  opacity: 1;
-  transform: translateY(0);
-}
-
+.loading-container.lineAcrossScreen .stuyvesant-wrapper .text-inner,
 .loading-container.lineAcrossScreen .senior-caucus-wrapper .text-inner {
   opacity: 1;
   transform: translateY(0);
@@ -93,14 +89,14 @@
   width: 50px;
   height: 50px;
   background-color: #fef3e1;
-  animation: circleTransform 0.3s forwards;
+  animation: circleTransform 1.2s forwards cubic-bezier(0.68, -0.55, 0.27, 1.55);
 }
 
 @keyframes circleTransform {
   0% {
     border-radius: 0;
     width: 100vw;
-    height: 2px;
+    height: 6px;
   }
   100% {
     border-radius: 50%;
@@ -118,22 +114,31 @@
   0% {
     width: 50px;
     height: 50px;
-    border-radius: 50%;
+    border-radius: 100%;
     transform: rotate(0deg) scale(1);
     background-color: #fef3e1;
     opacity: 1;
   }
   50% {
-    width: 300vw;
-    height: 300vh;
+    width: 100vmax;
+    height: 100vmax;
+    border-radius: 15%;
+    transform: rotate(180deg) scale(1);
+    background-color: #c7bcdc;
+    opacity: 1;
+  }
+
+  75% {
+    width: 250vmax;
+    height: 250vmax;
     border-radius: 0;
-    transform: rotate(45deg) scale(0.5);
-    background-color: #ded4f1;
-    opacity: 0.7;
+    transform: rotate(180deg) scale(1);
+    background-color: #c7bcdc;
+    opacity: 0.6;
   }
   100% {
-    width: 0;
-    height: 0;
+    width: 10vmax;
+    height: 10vmax;
     border-radius: 50%;
     transform: rotate(360deg) scale(0);
     background-color: #322343;

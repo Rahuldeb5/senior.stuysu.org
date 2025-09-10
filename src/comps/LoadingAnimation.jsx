@@ -9,16 +9,16 @@ const LoadingAnimation = ({ onAnimationComplete }) => {
     }, 700);
     const lineToCircleTimer = setTimeout(() => {
       setPhase('circle');
-    }, 1800);
+    }, 2300);
     const circleToAbstractTransitionTimer = setTimeout(() => {
       setPhase('abstractTransition');
-    }, 2000);
+    }, 2600);
     const animationCompleteTimer = setTimeout(() => {
       setPhase('complete');
       if (onAnimationComplete) {
         onAnimationComplete();
       }
-    }, 3700);
+    }, 4600);
     return () => {
       clearTimeout(dotToLineAcrossScreenTimer);
       clearTimeout(lineToCircleTimer);
