@@ -4,6 +4,9 @@ import { useLocation } from "react-router-dom";
 import Navbar from "../comps/Navbar";
 import CabinetData from "../data/cabinet.json";
 import "./Cabinet.css";
+import "../pages/Home.css"; 
+import Footer from "../comps/Footer";
+import seniorCaucusCabinetImage from '../../images/senior_caucus_cabinet.png'; 
 
 const Cabinet = () => {
   const [headingVisible, setHeadingVisible] = useState(true);
@@ -99,10 +102,10 @@ const Cabinet = () => {
     <Box className="cabinet">
       <Navbar />
       <Box className={`fade-in-overlay ${fadeInComplete ? 'fade-out' : ''}`} />
-      <Box className={`cabinet-heading-container ${!headingVisible ? 'fade-out' : ''} ${fadeInComplete ? 'fade-in-complete' : ''}`}>
-        <Typography className="cabinet-heading">
-          OUR CABINET
-        </Typography>
+      <Box className="hero-section">
+        <Box className="hero-content-wrapper">
+            <Box component="img" src={seniorCaucusCabinetImage} alt="Stuy senior caucus cabinet" className="home-title-image" />
+        </Box>
       </Box>
       <Box className={`cabinet-content ${contentVisible ? 'show' : ''}`}>
         {CabinetData.map((e, index) => (
@@ -131,6 +134,7 @@ const Cabinet = () => {
           </Box>
         ))}
       </Box>
+      <Footer />
     </Box>
   );
 };

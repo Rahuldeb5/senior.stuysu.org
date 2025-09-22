@@ -9,13 +9,17 @@ import './App.css';
 import CustomCursor from "./comps/CustomCursor";
 import { Box } from "@mui/material";
 
+import ScrollToTop from './comps/ScrollToTop';
+
 function App() {
 
   return (
     <Box>
       <BrowserRouter>
         <CustomCursor />
+        <ScrollToTop />
         <Routes>
+          
           <Route path="/" element={<Home />} />
           <Route path="*" element={<Home />} />
           <Route path="/events" element={<Events />} />
