@@ -18,7 +18,7 @@ export default function MyCalendar() {
     const CALENDAR_ID = import.meta.env.VITE_CALENDAR_ID;
 
     useEffect(() => {
-        // null check
+
         if (!calendarRef.current) {
             console.log("Calendar not found");
             return;
@@ -67,7 +67,7 @@ export default function MyCalendar() {
                 {
                   title: 'Test Event',
                   start: '2025-08-20',
-                //   end: '2025-08-21',
+
                   allDay: true
                 }
             ],
@@ -82,7 +82,7 @@ export default function MyCalendar() {
     }, [])
 
     useEffect(() => {
-        // change calendar view when window is resized using window listener
+
         const handleResize = () => {
             const targetView = getResponsiveView();
             changeView(targetView);
@@ -127,14 +127,9 @@ export default function MyCalendar() {
     }
 
     return (
-        <Box className="min-h-screen bg-gradient-to-b from-[#fcfffc] to-[#fff2e2] font-montserrat py-12 flex flex-col items-center">
-            <Box className="text-center mb-12 w-full max-w-3xl px-4 mx-auto">
-                <Typography variant="h1" className="text-4xl sm:text-5xl md:text-6xl font-bold bg-gradient-to-r from-[#6c5f83] to-[#c2b9d7] bg-clip-text text-transparent mb-4">
-                    Event Calendar
-                </Typography>
-            </Box>
+        <Box className="font-montserrat py-12 flex flex-col items-center">
             
-            <Box className="w-full max-w-4xl mx-auto bg-white/90 backdrop-blur-sm rounded-2xl shadow-xl border border-[#ded4f1] p-6 sm:p-8">
+            <Box className="w-full max-w-6xl mx-auto bg-white/30 backdrop-blur-md rounded-2xl shadow-lg border border-white/20 p-6 sm:p-8">
                 {error && <Box className="gc-error">{error}</Box>}
                 {isLoading && <Box className="gc-loading">Loading events...</Box>}
         

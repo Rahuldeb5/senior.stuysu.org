@@ -1,13 +1,23 @@
 import React from 'react';
 import { Box } from "@mui/material";
-
+import { styled } from "@mui/material/styles";
 import Navbar from "../comps/Navbar";
 import seniorCaucusMagazineImage from '../../images/senior_caucus_magazine.png';
+import waveBackground from '../../images/background_1.png';
 import "../pages/Home.css";
+
+const PageWrapper = styled(Box)({
+  background: '#fff2e2',
+  backgroundImage: `url(${waveBackground})`,
+  backgroundSize: 'cover',
+  backgroundPosition: 'center',
+  backgroundAttachment: 'fixed',
+  minHeight: '100vh',
+});
 
 const Magazines = () => {
   return (
-    <div>
+    <PageWrapper>
       <Navbar />
       <Box className="Magazines">
       <Box className="hero-section">
@@ -16,7 +26,7 @@ const Magazines = () => {
         </Box>
       </Box>
       </Box>
-    </div>
+    </PageWrapper>
   );
 };
 

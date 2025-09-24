@@ -1,12 +1,13 @@
-import { Box, Typography, Button, Card, CardContent, Grid, Container } from "@mui/material";
+import { Box, Typography, Card, CardContent, Grid, Container, IconButton } from "@mui/material";
 import Navbar from "../comps/Navbar";
 import LoadingAnimation from "../comps/LoadingAnimation";
 import Footer from "../comps/Footer";
-import { useState, useEffect, useRef, useId } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import "./Home.css";
 import seniorCaucusTitleImage from '../../images/senior_caucus_title.png';
-import ArrowDownwardIcon from '@mui/icons-material/ArrowDownward';
-import GroupIcon from '@mui/icons-material/Group';
+import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown';
+
+
 import EventIcon from '@mui/icons-material/Event';
 import SchoolIcon from '@mui/icons-material/School';
 import EmojiEventsIcon from '@mui/icons-material/EmojiEvents';
@@ -14,42 +15,14 @@ import FormatQuoteIcon from '@mui/icons-material/FormatQuote';
 import StarIcon from '@mui/icons-material/Star';
 import Diversity3Icon from '@mui/icons-material/Diversity3';
 import CelebrationIcon from '@mui/icons-material/Celebration';
+import GroupIcon from '@mui/icons-material/Group';
 import SupportAgentIcon from '@mui/icons-material/SupportAgent';
 import WorkspacePremiumIcon from '@mui/icons-material/WorkspacePremium';
 import ArrowForwardIcon from '@mui/icons-material/ArrowForward';
+import MonetizationOnIcon from '@mui/icons-material/MonetizationOn';
 
-import { clsx } from "clsx";
-import { twMerge } from "tailwind-merge";
-import { useMotionValue, motion, useMotionTemplate, AnimatePresence } from "framer-motion";
-
-export function cn(...inputs) { return twMerge(clsx(inputs)); }
-export const HeroHighlight = ({ children, className, containerClassName, }) => { let mouseX = useMotionValue(0); let mouseY = useMotionValue(0); function handleMouseMove({ currentTarget, clientX, clientY, }) { if (!currentTarget) return; let { left, top } = currentTarget.getBoundingClientRect(); mouseX.set(clientX - left); mouseY.set(clientY - top); } return ( <Box className={cn( "relative group", containerClassName )} onMouseMove={handleMouseMove} > <Box className="absolute inset-0 bg-dot-thick-neutral-300 dark:bg-dot-thick-neutral-800  pointer-events-none" /> <motion.div className="pointer-events-none bg-dot-thick-indigo-500 dark:bg-dot-thick-indigo-500 absolute inset-0 opacity-0 transition duration-300 group-hover:opacity-100" style={{ WebkitMaskImage: useMotionTemplate` radial-gradient( 200px circle at ${mouseX}px ${mouseY}px, black 0%, transparent 100% ) `, maskImage: useMotionTemplate` radial-gradient( 200px circle at ${mouseX}px ${mouseY}px, black 0%, transparent 100% ) `, }} /> <Box className={cn("relative", className)}>{children}</Box> </Box> ); };
-export const Highlight = ({ children, className }) => {
-  return (
-    <motion.span
-      initial={{ backgroundSize: "0% 100%" }}
-      whileInView={{ backgroundSize: "100% 100%" }}
-      viewport={{ once: true, amount: 0.8 }}     
-      transition={{
-        duration: 2,
-        ease: "linear",
-        delay: 0.5,
-      }}
-      style={{
-        backgroundRepeat: "no-repeat",
-        backgroundPosition: "left center",
-        display: "inline",
-      }}
-      className={cn(
-        `relative inline-block pb-1 px-2 rounded-lg bg-gradient-to-r from-[#b4afd2] to-[#8b7fa6]`,
-        className
-      )}
-    >
-      <span className="highlight-text-wrapper">{children}</span>
-    </motion.span>
-  );
-};
-export function ContainerTextFlip({ words = ["better", "modern", "beautiful", "awesome"], interval = 2000, className, }) { const [currentWordIndex, setCurrentWordIndex] = useState(0); useEffect(() => { const intervalId = setInterval(() => { setCurrentWordIndex((prevIndex) => (prevIndex + 1) % words.length); }, interval); return () => clearInterval(intervalId); }, [words, interval]); return ( <Box className={cn("inline-flex items-center", className)}> <Box className="flip-text-container"> <motion.div key={words[currentWordIndex]} initial={{ opacity: 0, y: -20 }} animate={{ opacity: 1, y: 0 }} exit={{ opacity: 0, y: 20 }} transition={{ duration: 0.5, ease: "easeInOut" }} > {words[currentWordIndex]} </motion.div> </Box> </Box> ); }
+import { AnimatePresence, motion } from "framer-motion";
+import { ContainerTextFlip, AnimatedHeroHighlight, AnimatedHighlight } from "../comps/Highlight";
 
 const Home = () => {
     const [loading, setLoading] = useState(!sessionStorage.getItem('animationPlayed'));
@@ -68,7 +41,7 @@ const Home = () => {
     useEffect(() => {
         const quoteInterval = setInterval(() => {
             setCurrentQuoteIndex(prevIndex => (prevIndex + 1) % quotes.length);
-        }, 7000); 
+        }, 7000);
         return () => clearInterval(quoteInterval);
     }, [quotes.length]);
 
@@ -125,16 +98,16 @@ const Home = () => {
 
     const stats = [
         { number: "826", label: "Amazing Seniors", icon: <GroupIcon />, color: "#8b7fa6" },
-        { number: "99%", label: "Graduation Rate (2024)", icon: <SchoolIcon />, color: "#9c8fb8" },
-        { number: "138", label: "National Merit Semifinalists", icon: <EmojiEventsIcon />, color: "#a89fc5" },
-        { number: "100+", label: "Clubs & Activities", icon: <EventIcon />, color: "#b4afd2" }
+        { number: "450+", label: "Junior Prom Attendees", icon: <CelebrationIcon />, color: "#9c8fb8" },
+        { number: "$2,000+", label: "Raised Last Year For JProm", icon: <MonetizationOnIcon />, color: "#a89fc5" },
+        { number: "138", label: "National Merit Semifinalists", icon: <EmojiEventsIcon />, color: "#b4afd2" }
     ];
     
     const missionData = [
-        { title: "Lorem ipsum dolor sit amet", description: "blaH Blah", icon: <Diversity3Icon /> },
-        { title: "Create Memories", description: "Organize unforgettable senior events that celebrate our final year together.", icon: <CelebrationIcon /> },
-        { title: "Lorem ipsum dolor sit amet", description: "Lorem ipsum dolor sit amet", icon: <SupportAgentIcon /> },
-        { title: "Lorem ipsum dolor sit amety", description: "Lorem ipsum dolor sit amet", icon: <WorkspacePremiumIcon /> }
+        { title: "An Unforgettable Prom", description: "Planning and executing a spectacular and memorable senior prom for the class of 2026.", icon: <CelebrationIcon /> },
+        { title: "Graduation", description: "Ensuring a smooth graduation experience for all seniors.", icon: <SchoolIcon /> },
+        { title: "College Guidance", description: "Providing resources to help ALL seniors navigate the college application process and prepare for their future careers.", icon: <SupportAgentIcon /> },
+        { title: "Create Memories", description: "Organizing unforgettable senior events that celebrate our final year together, from sunrise to sunset.", icon: <Diversity3Icon /> }
     ];
 
     const exploreLinks = [
@@ -145,13 +118,13 @@ const Home = () => {
         { title: "Magazines", description: "Read our latest publications and news.", link: "/magazines" }
     ];
 
-    const flipWords = ["achievements", "milestones", "successes", "victories"];
+    const flipWords = ["achievements", "milestones", "successes", "victories", "wins"];
 
     return (
         <Box className="home-container">
             {loading && <LoadingAnimation onAnimationComplete={handleAnimationComplete} />}
             {!loading && (
-                <>
+                <>Mak
                     <Navbar />
                     
                     <Box ref={el => sectionsRef.current[0] = el} className="hero-section">
@@ -166,51 +139,33 @@ const Home = () => {
                             </AnimatePresence>
                         </Box>
                         <Box className="particles-container">
-                            {[...Array(25)].map((_, i) => ( 
-                                <Box key={i} className={`particle particle-${i}`}><StarIcon /></Box> 
+                            {[...Array(25)].map((_, i) => (
+                                <Box key={i} className={`particle particle-${i}`}><StarIcon /></Box>
                             ))}
                         </Box>
-                        <Box className="scroll-indicator" onClick={() => scrollToSection(1)}>
-                            <Typography variant="body2" sx={{ mb: 1 }}>Discover More</Typography>
-                            <ArrowDownwardIcon className="bounce" />
-                        </Box>
+                        <motion.div
+                            className="scroll-indicator"
+                            animate={{ y: [0, 10, 0] }}
+                            transition={{ duration: 1.5, repeat: Infinity, ease: 'easeInOut' }}
+                        >
+                            <IconButton onClick={() => scrollToSection(1)} sx={{ color: 'inherit' }}>
+                                <KeyboardArrowDownIcon fontSize="large" />
+                            </IconButton>
+                        </motion.div>
                     </Box>
 
-                    <Box ref={el => sectionsRef.current[1] = el} className="stats-section">
+                    <Box ref={el => sectionsRef.current[1] = el} className="mission-section">
                         <Container maxWidth="lg">
                             <Box className="section-header animate-on-scroll">
-                                <HeroHighlight containerClassName="stats-highlight-container">
-                                    <Typography variant="h2" className="section-title stats-title-highlight"> by the <Highlight>numbers</Highlight> </Typography>
-                                    <Typography variant="body1" className="section-subtitle"> celebrating our many <ContainerTextFlip words={flipWords} className="stats-flip-text" /> </Typography>
-                                </HeroHighlight>
-                            </Box>
-                            <Grid container spacing={4}>
-                                {stats.map((stat, index) => (
-                                    <Grid item xs={12} sm={6} md={3} key={index}>
-                                        <Card className={`stat-card animate-on-scroll`} style={{ animationDelay: `${index * 0.1}s`, '--accent-color': stat.color }} >
-                                            <CardContent>
-                                                <Box className="stat-icon-wrapper" style={{ background: stat.color }} > {stat.icon} </Box>
-                                                <Typography variant="h3" className="stat-number"> {stat.number} </Typography>
-                                                <Typography variant="body1" className="stat-label"> {stat.label} </Typography>
-                                            </CardContent>
-                                        </Card>
-                                    </Grid>
-                                ))}
-                            </Grid>
-                        </Container>
-                    </Box>
-
-                    <Box ref={el => sectionsRef.current[2] = el} className="mission-section">
-                        <Container maxWidth="lg">
-                            <Box className="section-header animate-on-scroll">
-                                <HeroHighlight containerClassName="stats-highlight-container">
-                                    <Typography variant="h2" className="section-title stats-title-highlight title-on-dark-bg"> 
-                                        our <Highlight>mission</Highlight> 
+                                <AnimatedHeroHighlight containerClassName="stats-highlight-container">
+                                    <Typography variant="h2" className="section-title stats-title-highlight title-on-dark-bg">
+                                        our <AnimatedHighlight>mission</AnimatedHighlight>
                                     </Typography>
-                                    <Typography variant="body1" className="section-subtitle subtitle-on-dark-bg"> 
-                                        for the 2025-2026 school year 
+                                    <br />
+                                    <Typography variant="body1" className="section-subtitle subtitle-on-dark-bg">
+                                        for the 2025-2026 school year
                                     </Typography>
-                                </HeroHighlight>
+                                </AnimatedHeroHighlight>
                             </Box>
                             <Grid container spacing={4}>
                                 {missionData.map((mission, index) => (
@@ -229,18 +184,44 @@ const Home = () => {
                             </Grid>
                         </Container>
                     </Box>
+
+                    <Box ref={el => sectionsRef.current[2] = el} className="stats-section">
+                        <Container maxWidth="lg">
+                            <Box className="section-header animate-on-scroll">
+                                <AnimatedHeroHighlight containerClassName="stats-highlight-container">
+                                    <Typography variant="h2" className="section-title stats-title-highlight"> by the <AnimatedHighlight>numbers</AnimatedHighlight> </Typography>
+                                    <br />
+                                    <Typography variant="body1" className="section-subtitle"> celebrating our many <ContainerTextFlip words={flipWords} className="stats-flip-text" /> </Typography>
+                                </AnimatedHeroHighlight>
+                            </Box>
+                            <Grid container spacing={4}>
+                                {stats.map((stat, index) => (
+                                    <Grid item xs={12} sm={6} md={3} key={index}>
+                                        <Card className={`stat-card animate-on-scroll`} style={{ animationDelay: `${index * 0.1}s`, '--accent-color': stat.color }} >
+                                            <CardContent>
+                                                <Box className="stat-icon-wrapper" style={{ background: stat.color }} > {stat.icon} </Box>
+                                                <Typography variant="h3" className="stat-number"> {stat.number} </Typography>
+                                                <Typography variant="body1" className="stat-label"> {stat.label} </Typography>
+                                            </CardContent>
+                                        </Card>
+                                    </Grid>
+                                ))}
+                            </Grid>
+                        </Container>
+                    </Box>
                     
                     <Box ref={el => sectionsRef.current[3] = el} className="explore-section">
                         <Container maxWidth="lg">
                             <Box className="section-header animate-on-scroll">
-                                <HeroHighlight containerClassName="stats-highlight-container">
+                                <AnimatedHeroHighlight containerClassName="stats-highlight-container">
                                     <Typography variant="h2" className="section-title stats-title-highlight">
-                                        explore <Highlight>our world</Highlight>
+                                        explore <AnimatedHighlight>our world</AnimatedHighlight>
                                     </Typography>
+                                    <br />
                                     <Typography variant="body1" className="section-subtitle">
-                                        but what is Senior Caucus?
+                                         so what exactly is Senior Caucus?
                                     </Typography>
-                                </HeroHighlight>
+                                </AnimatedHeroHighlight>
                             </Box>
                             <Box className="explore-grid">
                                 {exploreLinks.map((item, index) => (
@@ -272,5 +253,4 @@ const Home = () => {
         </Box>
     );
 }
-
 export default Home;

@@ -1,22 +1,62 @@
 import React from 'react';
-import { Box } from "@mui/material";
-
+import { Box, Typography, Container } from "@mui/material";
+import { styled } from "@mui/material/styles";
 import Navbar from "../comps/Navbar";
 import Footer from "../comps/Footer";
 import seniorCaucusPromImage from '../../images/senior_caucus_prom.png';
+import waveBackground from '../../images/background_1.png';
+import workInProgressImage from '../../images/work_in_progress.png';
 import "../pages/Home.css";
+
+const PageWrapper = styled(Box)({
+  background: '#fff2e2',
+  backgroundImage: `url(${waveBackground})`,
+  backgroundSize: 'cover',
+  backgroundPosition: 'center',
+  backgroundAttachment: 'fixed',
+  minHeight: '100vh',
+  display: 'flex',
+  flexDirection: 'column',
+});
+
+const ContentWrapper = styled(Box)({
+  flex: 1,
+});
 
 const Prom = () => {
   return (
-    <div>
+    <PageWrapper>
       <Navbar />
-      <Box className="hero-section">
-        <Box className="hero-content-wrapper">
-            <Box component="img" src={seniorCaucusPromImage} alt="Stuy senior caucus prom" className="home-title-image" />
+      <ContentWrapper>
+        <Box className="hero-section">
+          <Box className="hero-content-wrapper">
+              <Box component="img" src={seniorCaucusPromImage} alt="Stuy senior caucus prom" className="home-title-image" />
+          </Box>
         </Box>
-      </Box>
+        <Container sx={{ textAlign: 'center', py: 8 }}>
+          <Box
+            component="img"
+            src={workInProgressImage}
+            alt="Work in Progress"
+            sx={{
+              display: 'block',
+              margin: '0 auto',
+              maxWidth: '100%',
+              height: 'auto',
+              maxHeight: '600px',
+              mb: 4 
+            }}
+          />
+          <Typography variant="h4" component="h2" gutterBottom sx={{ fontWeight: 'bold', color: '#322343' }}>
+            Coming Soon!
+          </Typography>
+          <Typography variant="body1" color="text.secondary">
+            We're hard at work planning an unforgettable prom experience. Check back later for more details!
+          </Typography>
+        </Container>
+      </ContentWrapper>
       <Footer />
-    </div>
+    </PageWrapper>
   );
 };
 
