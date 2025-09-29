@@ -36,7 +36,7 @@ export default function MyCalendar() {
 
     const showEventModal = (event) => {
         const time = timeFormat(event.start) === timeFormat(event.end) ? `All Day` : `${timeFormat(event.start)} - ${timeFormat(event.end)}`;
-        const day = dayFormat(event.start) === dayFormat(event.end) ? dayFormat(event.start) : `${dayFormat(event.start)} - ${dayFormat(event.end)}`;      
+        const day = dayFormat(event.start) === dayFormat(event.end) ? dayFormat(event.start) : `${dayFormat(event.start)} - ${dayFormat(event.end)}`;    
 
         const description = event.extendedProps.description || "";
 
@@ -52,81 +52,65 @@ export default function MyCalendar() {
         setModalOpen(false);
     };
 
+    const getResponsiveView = () => {
+        return window.innerWidth < 768 ? 'listWeek' : 'dayGridMonth';
+    };
+
+    const changeView = (viewName) => {
+        if (calendarInstance.current) {
+            calendarInstance.current.changeView(viewName);
+        }
+    };
+
     useEffect(() => {
-        // null check
-        if (!calendarRef.current) {
-            console.log("Calendar not found");
-            return;
-        };
+        if (!calendarRef.current) return;
 
         const calendar = new Calendar(calendarRef.current, {
-            plugins: [
-                dayGridPlugin,
-                timeGridPlugin,
-                listPlugin,
-                googleCalendarPlugin
-            ],
-
+            plugins: [dayGridPlugin, timeGridPlugin, listPlugin, googleCalendarPlugin],
             googleCalendarApiKey: API_KEY,
-
-            eventSources: [
-                {
-                    googleCalendarId: CALENDAR_ID
-                }
-            ],
-
+            eventSources: [{ googleCalendarId: CALENDAR_ID }],
             headerToolbar: {
-                left: '',
-                center: 'title',
-                right: ''
-            },
-            
-            footerToolbar: {
                 left: 'prev,next,today',
-                center: '',
-                right: 'listWeek,dayGridMonth'
+                center: 'title',
+                right: 'dayGridMonth,timeGridWeek,listWeek'
             },
-
-            loading: (isLoadingEvents) => {
-                setIsLoading(isLoadingEvents);
+            eventClick: (eventInfo) => {
+                eventInfo.jsEvent.preventDefault();
+                showEventModal(eventInfo.event);
             },
-
+            loading: (isLoadingEvents) => setIsLoading(isLoadingEvents),
             eventSourceFailure: (errorInfo) => {
                 console.error("Calendar error:", errorInfo);
                 setError("Failed to load calendar events");
                 setIsLoading(false);
             },
-
-            eventClick: (eventInfo) => {
-                eventInfo.jsEvent.preventDefault();
-                showEventModal(eventInfo.event);
-            },
-
-            initialView: "dayGridMonth",
+            initialView: getResponsiveView(),
             contentHeight: 'auto',
             nowIndicator: true,
             fixedWeekCount: false,
-
-            events: [
-                {
-                  title: 'Test Event',
-                  start: '2025-08-20',
-                  allDay: true
-                }
-            ],
         });
 
         calendar.render();
         calendarInstance.current = calendar;
-    }, [])
+    }, []);
+
+    useEffect(() => {
+        const handleResize = () => {
+            if (calendarInstance.current) {
+                const targetView = getResponsiveView();
+                calendarInstance.current.changeView(targetView);
+            }
+        };
+
+        window.addEventListener('resize', handleResize);
+        return () => {
+            window.removeEventListener('resize', handleResize);
+        };
+    }, []);
 
     return (
-        <Box className="page-container">
-            <Modal
-                open={modalOpen}
-                onClose={closeModal}
-                className="modal"
-            >
+        <Box className="page-container font-montserrat py-12 flex flex-col items-center">
+            <Modal open={modalOpen} onClose={closeModal} className="modal">
                 <Box className="modal-content">
                     <Box className="modal-header">
                         <Typography variant="h2" id="modalTitle">{modalData.title}</Typography>
@@ -140,19 +124,19 @@ export default function MyCalendar() {
                     </Box>
                 </Box>
             </Modal>
-
-            <Box className="page-title">
-                <Typography variant="h1" component="h1">
-                    Event Calendar
-                </Typography>
-            </Box>
             
-            <Box className="calendar-card">
+            <Box className="w-full max-w-6xl mx-auto bg-white/30 backdrop-blur-md rounded-2xl shadow-lg border border-white/20 p-6 sm:p-8">
                 {error && <Typography className="gc-error">{error}</Typography>}
-                <Box className="container">
-                    <Box id="calendar" ref={calendarRef}></Box>
+                {isLoading && <Box className="gc-loading">Loading events...</Box>}
+
+                <Box className="gc-buttons" sx={{ mb: 2 }}>
+                    <Button className="gc-button" onClick={() => changeView('listWeek')}>List View</Button>
+                    <Button className="gc-button" onClick={() => changeView('dayGridMonth')}>Month View</Button>
+                    <Button className="gc-button" onClick={() => changeView('timeGridWeek')}>Week View</Button>
                 </Box>
+
+                <Box id="calendar" ref={calendarRef}></Box>
             </Box>
         </Box>
-    )
+    );
 }

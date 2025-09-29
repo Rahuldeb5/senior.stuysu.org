@@ -1,27 +1,81 @@
 [
     {
-        "img": "images/cabinet/muzamil.png",
-        "name": "muzamil",
-        "bio": "poop3",
-        "role": "Co-President"
+        "img": "images/cabinet/Vanna Lei.jpg",
+        "name": "Vanna Lei",
+        "bio": "I'm Vanna Lei and I love food. I'm super excited to work with ygs for the fourth time in a row :) I love trying new foods and making new friends so don't hesitate to contact me. Hoping for the most memorable senior year ever!",
+        "role": "Co-Presidents"
         
     },
     {
-        "img": "images/cabinet/mr_greedy.png",
-        "name": "mr greedy",
-        "bio": "poop3",
-        "role": "Co-President"
+        "img": "images/cabinet/Amy Zhou.jpg",
+        "name": "Amy Zhou",
+        "bio": "Hi, I'm Amy and I'll be one of your Senior Caucus Co-Presidents this year. I can't wait to work with everyone to make senior year memorable and fun, especially with all the senior traditions. I'm interested in physics and computer science, and I love food.",
+        "role": "Co-Presidents"
     },
     {
-        "img": "images/cabinet/ronaldo.png",
-        "name": "ronaldo",
-        "bio": "poop3",
-        "role": "Chinaman"
+        "img": "images/cabinet/Sydney Wong.jpg",
+        "name": "Sydney Wong",  
+        "bio": "Hey everyone, I’m Sydney! I’m so excited to be working as a Chief of Staff for Senior Caucus this year. There are so many exciting things happening this year, so I hope we can all make amazing memories together!",
+        "role": "Chiefs of Staff"
     },
     {
-        "img": "images/cabinet/ronaldo.png",
-        "name": "ronaldo",
-        "bio": "poop3",
-        "role": "Chinaman"
+        "img": "images/cabinet/Ryan Yang.jpg",
+        "name": "Ryan Yang",
+        "bio": "Hi! I'm Ryan and I'm thrilled to be one of your Chiefs of Staff this year. I'm exhilarated to make this year as fun and memorable for everyone!",
+        "role": "Chiefs of Staff"
+    },
+    {
+        "img": "images/cabinet/Catherine Chan.jpg",
+        "name": "Catherine Chan",
+        "bio": "Hey seniors!! I’m so excited to be your events director again this year! I can’t wait to organize all of the events we have been looking forward to for all these years, such as senior sunrise and senior prom!! ",
+        "role": "Events"
+    },
+    {
+        "img": "images/cabinet/Sarah Jiang.jpg",
+        "name": "Sarah Jiang",
+        "bio": "Hey, I’m Sarah and I’m excited to be your finance director again. Let’s have another great year with many fun events and senior traditions. My other interests include music and math. ",
+        "role": "Finance"
+    },
+    {
+        "img": "images/cabinet/Claire Zeng.jpg",
+        "name": "Claire Zeng",
+        "bio": "Helloo I’m Claire and I like lemonade, confetti poppers, and a good dinner.",
+        "role": "Internals"
+    },
+    {
+        "img": "images/cabinet/Austin Li.jpg",
+        "name": "Austin Li",
+        "bio": "Hi, I'm Austin and I'm excited to be one of your Internals Directors this year. I enjoy sightseeing and cycling. I look forward to working with everyone and making our last year memorable!",
+        "role": "Internals"
+    },
+    {
+        "img": "images/cabinet/Hannah Moon.jpg",
+        "name": "Hannah Moon",
+        "bio": "I’m Hannah and I’m so excited to be a part of caucus again! Some fun facts about me are that I love documentaries and yogurt. Let’s push through one more year of high school 💔 Good luck seniors!",
+        "role": "Outreach"
+    },
+    {
+        "img": "images/cabinet/Jiewen Huang.jpg",
+        "name": "Jiewen Huang",
+        "bio": "Hi, my name is Jiewen Huang and I'm super excited to serve as one of your I.T. Directors this year alongside Rahul! In my free time, I enjoy playing video games like VALORANT and eating food. And sleeping. Especially sleeping.",
+        "role": "I.T."
+    },
+    {
+        "img": "images/cabinet/Rahul Deb.jpg",
+        "name": "Rahul Deb",
+        "bio": "I enjoy robotics and geoscience. In my free time, you can either find me swimming at the Y or sleeping.",
+        "role": "I.T."
+    },
+        {
+        "img": "images/cabinet/Lixin Zhang.jpg",
+        "name": "Lixin Zhang",
+        "bio": "Hi there! I'm Lixin and I'll be serving as the senior caucus' graphics director this year. Super excited to spice up our last year at Stuy with amazing designs!",
+        "role": "Graphics"
+    },
+        {
+        "img": "images/cabinet/Eisei Kori.jpg",
+        "name": "Eisei Kori",
+        "bio": "Hi, my name is Eisei and I am so excited to your director of communications this year!!! My current favorite pastime is playing fetch with my cats and going to AYCE. Hope to make more new memories with the class of ‘26!!!",
+        "role": "Communications"
     }
 ]

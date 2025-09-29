@@ -1,6 +1,5 @@
-/* @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700&display=swap'); */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700&display=swap');
 
-/* Page container */
 .page-container {
   min-height: 100vh;
   background: linear-gradient(to bottom, #fcfffc, #fff2e2);
@@ -11,7 +10,6 @@
   align-items: center;
 }
 
-/* Title + description */
 .page-title {
   text-align: center;
   margin-bottom: 48px;
@@ -52,7 +50,6 @@
   margin: 0 auto;
 }
 
-/* Calendar card */
 .calendar-card {
   width: 100%;
   max-width: 1200px;
@@ -71,23 +68,20 @@
   }
 }
 
-/* Centered page container */
 .container {
   max-width: 1200px;
   margin: 0 auto;
 }
 
-/* FullCalendar base styling */
 .fc {
   max-width: 100%;
   margin: 0 auto;
-  background-color: #fcfffc;
+  background-color: transparent;
   border: none;
   border-radius: 12px;
   padding: 10px;
 }
 
-/* Toolbar */
 .fc-toolbar {
   background-color: #fff2e2;
   padding: 12px 16px;
@@ -104,7 +98,6 @@
   color: #322343;
 }
 
-/* FullCalendar buttons */
 .fc-button {
   background-color: #b8a9d9;
   border-color: #b8a9d9;
@@ -129,7 +122,6 @@
   opacity: 0.7;
 }
 
-/* Calendar day headers */
 .fc-col-header-cell {
   background: linear-gradient(180deg, #f0ebff 0%, #e8dff7 100%);
   color: #5d4e75;
@@ -138,7 +130,6 @@
   text-align: center;
 }
 
-/* Override FullCalendar's default blue text for day headers */
 .fc-col-header-cell .fc-col-header-cell-cushion,
 .fc-col-header-cell a,
 .fc-col-header-cell-cushion {
@@ -151,7 +142,6 @@
   color: #5d4e75 !important;
 }
 
-/* Calendar cells */
 .fc .fc-daygrid-day,
 .fc .fc-timegrid-slot {
   border: 1px solid #f0ebff;
@@ -164,7 +154,6 @@
   background-color: #f5f2ff;
 }
 
-/* Override FullCalendar's default blue text for day numbers */
 .fc-daygrid-day-number,
 .fc-daygrid-day-top,
 .fc-daygrid-day .fc-daygrid-day-number,
@@ -179,14 +168,12 @@
   color: #5d4e75 !important;
 }
 
-/* Today highlight */
 .fc-day-today {
   background-color: #f5f2ff !important;
   border: 1px solid #f0ebff !important;
   border-radius: 8px;
 }
 
-/* Events */
 .fc-event {
   border: none;
   border-radius: 6px;
@@ -202,7 +189,6 @@
   cursor: pointer;
 }
 
-/* Mobile responsiveness for events */
 @media (max-width: 768px) {
   .fc-event {
     font-size: 0.7rem;
@@ -215,7 +201,6 @@
   }
 }
 
-/* Now indicator */
 .fc .fc-timegrid-now-indicator-line {
   border-color: #b8a9d9 !important;
 }
@@ -224,7 +209,6 @@
   border-top-color: #b8a9d9 !important;
 }
 
-/* Legend styling */
 .calendar-legend {
   display: flex;
   justify-content: center;
@@ -295,7 +279,6 @@
   color: #9b89c7 !important;
 }
 
-/* Optional: add spacing and styling for loading/error */
 .gc-loading, .gc-error {
   text-align: center;
   margin-bottom: 12px;
@@ -308,10 +291,8 @@
 }
 
 .gc-calendar {
-  /* Container for the calendar */
 }
 
-/* MINIMAL MOBILE RESPONSIVENESS ADDITIONS */
 @media (max-width: 768px) {
   .page-container {
     padding: 24px 0;
@@ -356,7 +337,6 @@
   }
 }
 
-/* Simple modal styling for MUI Modal */
 .modal .MuiModal-backdrop {
   background-color: rgba(0, 0, 0, 0.5);
 }

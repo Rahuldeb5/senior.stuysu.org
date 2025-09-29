@@ -9,16 +9,16 @@ const LoadingAnimation = ({ onAnimationComplete }) => {
     }, 700);
     const lineToCircleTimer = setTimeout(() => {
       setPhase('circle');
-    }, 1800);
+    }, 2300);
     const circleToAbstractTransitionTimer = setTimeout(() => {
       setPhase('abstractTransition');
-    }, 2000);
+    }, 2600);
     const animationCompleteTimer = setTimeout(() => {
       setPhase('complete');
       if (onAnimationComplete) {
         onAnimationComplete();
       }
-    }, 3700);
+    }, 4600);
     return () => {
       clearTimeout(dotToLineAcrossScreenTimer);
       clearTimeout(lineToCircleTimer);
@@ -30,6 +30,14 @@ const LoadingAnimation = ({ onAnimationComplete }) => {
   return (
     <div className={`loading-container ${phase}`}>
       <div className="animation-element"></div>
+      <div className="text-container">
+        <div className="text stuyvesant-wrapper">
+          <div className="text-inner">Stuyvesant</div>
+        </div>
+        <div className="text senior-caucus-wrapper">
+          <div className="text-inner">Senior Caucus</div>
+        </div>
+      </div>
     </div>
   );
 };
