@@ -1,8 +1,10 @@
 import { Box, Typography, Container } from "@mui/material";
 import { styled } from "@mui/material/styles";
+import { motion } from 'framer-motion';
 import Navbar from "../comps/Navbar";
 import MyCalendar from "../comps/MyCalendar";
 import Footer from "../comps/Footer";
+import ScrollDownIndicator from '../comps/ScrollDownIndicator';
 import seniorCaucusEventsImage from '../../images/senior_caucus_events.png';
 import waveBackground from '../../images/background_1.png';
 import "../pages/Home.css";
@@ -16,14 +18,33 @@ const PageWrapper = styled(Box)({
   minHeight: '100vh',
 });
 
+const PurpleSlice = styled(motion.div)({
+    position: 'absolute',
+    top: 0,
+    left: 0,
+    width: '100%',
+    height: '100%',
+    background: 'linear-gradient(135deg, #b4afd2 0%, #ded4f1 100%)',
+    zIndex: 0,
+    boxShadow: '0 0 80px 60px #b4afd2',
+  });
+
 const Events = () => {
+
+    const sliceAnimation = {
+        initial: { clipPath: 'polygon(0 0, 100% 0, 100% 0, 0 0)' },
+        animate: { clipPath: 'polygon(0 0, 100% 0, 100% 80%, 0% 100%)', transition: { duration: 1.2, ease: [0.76, 0, 0.24, 1] } },
+      };
+
   return(
       <PageWrapper className="Events">
           <Navbar />
           <Box className="hero-section">
+            <PurpleSlice variants={sliceAnimation} initial="initial" animate="animate" />
               <Box className="hero-content-wrapper">
                   <Box component="img" src={seniorCaucusEventsImage} alt="Stuy senior caucus events" className="home-title-image" />
               </Box>
+              <ScrollDownIndicator />
           </Box>
           <Container sx={{ textAlign: 'center', mb: 4 }}>
             <Typography variant="h5" sx={{ color: '#322343', fontWeight: 'bold' }}>

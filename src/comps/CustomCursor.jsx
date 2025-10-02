@@ -11,7 +11,7 @@ const CustomCursor = () => {
     const handleMouseMove = (e) => {
       setPosition({ x: e.clientX, y: e.clientY });
       const target = e.target;
-      if (target.tagName === 'A' || target.tagName === 'BUTTON') {
+      if (target.closest('a, button, [role="button"], [onClick]')) {
         if (!hover) {
           setHover(true);
         }
