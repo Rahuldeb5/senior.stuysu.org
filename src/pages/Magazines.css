@@ -1,3 +1,9 @@
 .Magazines {
     background: linear-gradient(135deg, #fff2e2 0%, #fcfffc 50%, #ded4f1 100%);
 }
+
+.content {
+  display: flex;
+  flex-direction: column; /* Stack sections vertically */
+  width: 100%;
+}
