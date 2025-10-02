@@ -1,0 +1,10 @@
+{
+  "seniorMagazines": [
+    {
+      "url": "/pdfs/magazines/senior/september.pdf",
+      "title": "September",
+      "color": "#ffecd4",
+      "textcolor": "black"
+    }
+  ]
+}

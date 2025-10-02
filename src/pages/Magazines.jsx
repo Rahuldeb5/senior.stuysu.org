@@ -5,6 +5,7 @@ import Navbar from "../comps/Navbar";
 import seniorCaucusMagazineImage from '../../images/senior_caucus_magazine.png';
 import waveBackground from '../../images/background_1.png';
 import "../pages/Home.css";
+import DropdownBoxes from "../comps/DropdownBoxes";
 
 const PageWrapper = styled(Box)({
   background: '#fff2e2',
@@ -24,6 +25,9 @@ const Magazines = () => {
         <Box className="hero-content-wrapper">
             <Box component="img" src={seniorCaucusMagazineImage} alt="Stuy senior caucus magazine" className="home-title-image" />
         </Box>
+      </Box>
+      <Box className="content">
+        <DropdownBoxes />
       </Box>
       </Box>
     </PageWrapper>
