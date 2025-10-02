@@ -1,11 +1,12 @@
 import React from 'react';
-import { Box } from "@mui/material";
+import { Box, Typography } from "@mui/material";
 import { styled } from "@mui/material/styles";
 import { motion } from 'framer-motion';
 import Navbar from "../comps/Navbar";
 import Footer from "../comps/Footer";
 import EmbeddedDoc from '../comps/EmbeddedDoc';
 import ScrollDownIndicator from '../comps/ScrollDownIndicator';
+import { AnimatedHighlight } from '../comps/Highlight';
 import seniorCaucusResourcesImage from '../../images/senior_caucus_resources.png';
 import waveBackground from '../../images/background_1.png';
 import "../pages/Home.css";
@@ -65,6 +66,24 @@ const Resources = () => {
             <PurpleSlice variants={sliceAnimation} initial="initial" animate="animate" />
           <Box className="hero-content-wrapper">
               <Box component="img" src={seniorCaucusResourcesImage} alt="Stuy senior caucus resources" className="home-title-image" />
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 1, delay: 0.5 }}
+                style={{ position: 'relative', zIndex: 1 }}
+                >
+                <Typography
+                    variant="h2"
+                    className="section-title stats-title-highlight"
+                    sx={{
+                    fontWeight: 400,
+                    fontSize: 'clamp(2.5rem, 5vw, 4rem)',
+                    color: '#322343',
+                    }}
+                >
+                    your senior <AnimatedHighlight>stuff</AnimatedHighlight>.
+                </Typography>
+            </motion.div>
           </Box>
           <ScrollDownIndicator />
         </Box>

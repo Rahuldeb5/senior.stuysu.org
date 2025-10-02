@@ -5,6 +5,7 @@ import Navbar from "../comps/Navbar";
 import MyCalendar from "../comps/MyCalendar";
 import Footer from "../comps/Footer";
 import ScrollDownIndicator from '../comps/ScrollDownIndicator';
+import { AnimatedHighlight } from '../comps/Highlight';
 import seniorCaucusEventsImage from '../../images/senior_caucus_events.png';
 import waveBackground from '../../images/background_1.png';
 import "../pages/Home.css";
@@ -43,6 +44,24 @@ const Events = () => {
             <PurpleSlice variants={sliceAnimation} initial="initial" animate="animate" />
               <Box className="hero-content-wrapper">
                   <Box component="img" src={seniorCaucusEventsImage} alt="Stuy senior caucus events" className="home-title-image" />
+                  <motion.div
+                    initial={{ opacity: 0, y: 20 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 1, delay: 0.5 }}
+                    style={{ position: 'relative', zIndex: 1 }}
+                    >
+                    <Typography
+                        variant="h2"
+                        className="section-title stats-title-highlight"
+                        sx={{
+                        fontWeight: 400,
+                        fontSize: 'clamp(2.5rem, 5vw, 4rem)',
+                        color: '#322343',
+                        }}
+                    >
+                        all things <AnimatedHighlight>stuy</AnimatedHighlight>.
+                    </Typography>
+                </motion.div>
               </Box>
               <ScrollDownIndicator />
           </Box>
