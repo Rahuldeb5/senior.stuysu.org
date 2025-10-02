@@ -14,7 +14,7 @@ const Footer = () => {
                         <Link href="https://linktr.ee/seniorcaucus2026" target="_blank" rel="noopener noreferrer" className="link-item">
                             <Box
                                 component="img" 
-                                src="/images/linktree-icon-transparent.png" 
+                                src="../../images/linktree-icon-transparent.png" 
                                 alt="link-tree" 
                                 className="icon-image"
                             />
@@ -22,7 +22,7 @@ const Footer = () => {
                         <Link href="https://www.instagram.com/stuyseniorcaucus/" target="_blank" rel="noopener noreferrer" className="link-item">
                             <Box
                                 component="img" 
-                                src="/images/instagram-logo-transparent.png" 
+                                src="../../images/instagram-logo-transparent.png" 
                                 alt="insta" 
                                 className="icon-image"
                             />
@@ -30,7 +30,7 @@ const Footer = () => {
                         <Link href="https://www.facebook.com/share/g/1D2kZEi262/" target="_blank" rel="noopener noreferrer" className="link-item">
                             <Box
                                 component="img" 
-                                src="/images/facebook-logo-transparent.png" 
+                                src="../../images/facebook-logo-transparent.png" 
                                 alt="FB" 
                                 className="icon-image"
                             />
@@ -42,7 +42,7 @@ const Footer = () => {
                     <Link href="https://stuy.enschool.org/" target="_blank" rel="noopener noreferrer" className="link-item">
                         <Box
                             component="img" 
-                            src="/images/stuyvesant-high-school-logo-transparent.png" 
+                            src="../../images/stuyvesant-high-school-logo-transparent.png" 
                             alt="stuyvesant-high-school" 
                             className="brand-logo"
                         />
