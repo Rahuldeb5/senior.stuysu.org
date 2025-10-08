@@ -352,13 +352,30 @@
   width: 90%;
   max-width: 500px;
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+  color: #1a1a1a;
+  font-family: 'Montserrat', sans-serif; /* match global font */
+  font-weight: 400; /* normal weight by default */
+  line-height: 1.5; /* optional: improves readability */
 }
 
-.modal-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin-bottom: 15px;
+
+.modal-header,
+.modal-body,
+.modal-footer {
+  color: #1a1a1a;
+  font-family: 'Montserrat', sans-serif;
+}
+
+.modal-header h2 {
+  font-size: 1.25rem; /* reduce from default 1.5-1.75rem */
+  font-weight: 700;   /* keep bold */
+  margin: 0;
+}
+
+
+.modal-body p {
+  font-weight: 400;
+  font-size: 1rem;
 }
 
 .close {
