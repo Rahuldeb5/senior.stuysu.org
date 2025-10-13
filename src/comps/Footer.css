@@ -52,8 +52,9 @@
 .credits-section {
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
+    justify-content: flex-start;
     text-align: right;
+    gap: 10px;
 }
 
 .brand-header {
@@ -67,13 +68,49 @@
     color: #322343;
 }
 
+.credits-toggle {
+    background: none;
+    border: none;
+    color: white;
+    cursor: pointer;
+    padding: 8px 12px;
+    font-size: 16px;
+    font-weight: 600;
+    text-align: right;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 8px;
+    transition: all 0.3s ease;
+    width: fit-content;
+    margin-left: auto;
+}
+
+.credits-toggle:hover {
+    opacity: 0.8;
+}
+
+.credits-title {
+    color: #322343;
+    font-weight: 600;
+    font-size: 16px;
+}
+
 .credits-content {
     text-align: right;
-
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
-    flex-grow: 1;
+    gap: 4px;
+    max-height: 0;
+    overflow: hidden;
+    opacity: 0;
+    transition: max-height 0.4s ease, opacity 0.3s ease, margin-top 0.3s ease;
+}
+
+.credits-content.expanded {
+    max-height: 300px;
+    opacity: 1;
+    margin-top: 8px;
 }
 
 .team-list {
@@ -117,4 +154,72 @@ html, body {
     min-height: 100vh;
     display: flex;
     flex-direction: column;
+}
+
+/* Mobile optimizations */
+@media screen and (max-width: 768px) {
+    .content-wrapper {
+        flex-direction: column;
+        gap: 20px;
+        align-items: center;
+    }
+
+    .info-section {
+        width: 100%;
+        align-items: center;
+        text-align: center;
+    }
+
+    .brand-header {
+        text-align: center;
+    }
+
+    .main-title {
+        font-size: 24px;
+    }
+
+    .logo-section {
+        position: static;
+        transform: none;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+    }
+
+    .brand-logo {
+        width: 120px;
+    }
+
+    .credits-section {
+        width: 100%;
+        align-items: center;
+    }
+
+    .credits-toggle {
+        margin: 0 auto;
+        justify-content: center;
+    }
+
+    .credits-content {
+        text-align: center;
+        width: 100%;
+    }
+
+    .team-list {
+        text-align: center;
+        font-size: 14px;
+    }
+
+    .info-text {
+        font-size: 14px;
+    }
+
+    .icon-image {
+        width: 50px;
+        height: 50px;
+    }
+
+    .social-links {
+        justify-content: center;
+    }
 }

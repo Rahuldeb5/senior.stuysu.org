@@ -1,4 +1,5 @@
 import { Box, Link, Typography } from "@mui/material";
+import { useState } from "react";
 import "./Footer.css";
 
 import LinktreeImage from "../../images/linktree-icon-transparent.png";
@@ -7,6 +8,8 @@ import FacebookImage from "../../images/facebook-logo-transparent.png";
 import StuyImage from "../../images/stuyvesant-high-school-logo-transparent.png";
 
 const Footer = () => {
+    const [creditsExpanded, setCreditsExpanded] = useState(false);
+
     return (
         <Box className="main-footer">
             <Box className="content-wrapper">
@@ -54,8 +57,17 @@ const Footer = () => {
                     </Link>
                 </Box>
                 <Box className="credits-section">
-                    <Box className="credits-content">
-                        <Typography variant="p" className="footer-text credits-title">Credits:</Typography>
+                    <button
+                        className="credits-toggle"
+                        onClick={() => setCreditsExpanded(!creditsExpanded)}
+                        aria-expanded={creditsExpanded}
+                        aria-label="Toggle credits"
+                    >
+                        <Typography variant="p" className="credits-title">
+                            Credits {creditsExpanded ? '−' : '+'}
+                        </Typography>
+                    </button>
+                    <Box className={`credits-content ${creditsExpanded ? 'expanded' : ''}`}>
                         <Typography variant="p" className="info-text">Co-Presidents: Vanna Lei & Amy Zhou</Typography>
                         <Typography variant="p" className="info-text">Development Leads: Rahul Deb & Jiewen Huang</Typography>
                         <Typography variant="p" className="info-text">Senior Caucus IT Team:</Typography>
