@@ -1,6 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;700&family=Manrope:wght@300;700&display=swap');
 
-/* General Page Styles */
 .PageWrapper {
   background: linear-gradient(135deg, #fff2e2 0%, #fcfffc 50%, #ded4f1 100%);
   min-height: 100vh;
@@ -22,10 +20,9 @@
   transform-origin: center;
 }
 
-/* Hero Section (Replaces old fixed heading) */
 .HeroSection {
   text-align: center;
-  color: #322343; /* Dark purple for text */
+  color: #322343;
 }
 
 .HeroTitle {
@@ -37,11 +34,10 @@
 
 .HeroSubtitle {
   font-size: clamp(1.2rem, 3vw, 1.5rem) !important;
-  color: #6c5f83 !important; /* Muted purple */
+  color: #6c5f83 !important; 
   font-weight: 400 !important;
 }
 
-/* Team Section & Layout */
 .TeamSection {
   padding: 100px 0;
 }
@@ -61,14 +57,13 @@
   }
 }
 
-/* Unified Member Card (Replaces .img-card and .bio-card) */
 .MemberCard {
   border-radius: 20px !important;
   overflow: hidden !important;
   box-shadow: 0 8px 32px rgba(108, 95, 131, 0.15) !important;
   transition: transform 0.4s ease, box-shadow 0.4s ease !important;
   border: 1px solid rgba(222, 212, 241, 0.4) !important;
-  background: rgba(252, 255, 252, 0.9) !important; /* Creamy white base */
+  background: rgba(252, 255, 252, 0.9) !important; 
   max-width: 450px;
   width: 100%;
 }
@@ -78,12 +73,10 @@
   box-shadow: 0 12px 40px rgba(108, 95, 131, 0.25) !important;
 }
 
-/* Alternating Card Styles */
 .MemberCard:nth-of-type(even) {
-  background: rgba(222, 212, 241, 0.9) !important; /* Light lavender base for even cards */
+  background: rgba(222, 212, 241, 0.9) !important; 
 }
 
-/* Image & Role Badge */
 .ImageContainer {
   padding: 1rem;
 }
@@ -101,8 +94,8 @@
   top: 30px;
   left: 30px;
   padding: 8px 16px !important;
-  background: rgba(50, 35, 67, 0.8) !important; /* Dark purple badge */
-  color: #fff2e2 !important; /* Cream text */
+  background: rgba(50, 35, 67, 0.8) !important;
+  color: #fff2e2 !important;
   backdrop-filter: blur(5px);
   border-radius: 30px;
   font-size: 0.9rem !important;
@@ -111,7 +104,6 @@
   letter-spacing: 1px;
 }
 
-/* Content within the Card */
 .ContentContainer {
   padding: 1rem 2rem 2.5rem 2rem !important;
   text-align: center;
@@ -126,7 +118,7 @@
 }
 
 .MemberCard:nth-of-type(even) .MemberName {
-  color: #322343 !important; /* Keep name dark for readability */
+  color: #322343 !important;
 }
 
 .MemberBio {
@@ -136,7 +128,6 @@
   margin-bottom: 1.5rem !important;
 }
 
-/* Social Links Styling */
 .SocialLinks {
   display: flex;
   justify-content: center;
@@ -144,14 +135,14 @@
 }
 
 .SocialButton {
-  color: #6c5f83 !important; /* Muted purple icons */
+  color: #6c5f83 !important;
   border: 1px solid #ded4f1 !important;
   transition: all 0.3s ease !important;
 }
 
 .SocialButton:hover {
-  color: #fff2e2 !important; /* Cream text on hover */
-  background: #6c5f83 !important; /* Muted purple background on hover */
+  color: #fff2e2 !important;
+  background: #6c5f83 !important;
   border-color: #6c5f83 !important;
   transform: translateY(-3px);
 }
@@ -170,7 +161,7 @@
 }
 
 .stats-title-highlight {
-  font-family: 'Inter', sans-serif !important;
+  font-family: 'Montserrat', sans-serif !important;
   font-weight: 300;
   text-transform: lowercase;
 }
