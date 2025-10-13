@@ -3,6 +3,7 @@ import Navbar from "../comps/Navbar";
 import LoadingAnimation from "../comps/LoadingAnimation";
 import Footer from "../comps/Footer";
 import { useState, useEffect, useRef } from 'react';
+import { Link } from 'react-router-dom';
 import "./Home.css";
 import seniorCaucusTitleImage from '../../images/senior_caucus_title.png';
 import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown';
@@ -225,7 +226,7 @@ const Home = () => {
                             </Box>
                             <Box className="explore-grid">
                                 {exploreLinks.map((item, index) => (
-                                    <a href={item.link} key={index} className="explore-card-link">
+                                    <Link to={item.link} key={index} className="explore-card-link">
                                         <Card className={`explore-card animate-on-scroll`} style={{ animationDelay: `${index * 0.1}s` }}>
                                             <CardContent>
                                                 <Typography variant="h5" className="explore-card-title">{item.title}</Typography>
@@ -235,7 +236,7 @@ const Home = () => {
                                                 </Box>
                                             </CardContent>
                                         </Card>
-                                    </a>
+                                    </Link>
                                 ))}
                             </Box>
                         </Container>
