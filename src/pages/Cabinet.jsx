@@ -29,6 +29,13 @@ const HeroSection = styled(Box)({
   alignItems: 'center',
   justifyContent: 'center',
   textAlign: 'center',
+  padding: '20px',
+  '@media (max-width: 768px)': {
+    minHeight: '100vh',
+    height: 'auto',
+    paddingTop: '60px',
+    paddingBottom: '60px',
+  },
 });
 
 const ScrollIndicator = styled(motion.div)({
@@ -39,7 +46,10 @@ const ScrollIndicator = styled(motion.div)({
   zIndex: 10,
   display: 'flex',
   flexDirection: 'column',
-  alignItems: 'center', 
+  alignItems: 'center',
+  '@media (max-width: 768px)': {
+    bottom: '20px',
+  },
 });
 
 const PurpleSlice = styled(motion.div)({
@@ -51,11 +61,17 @@ const PurpleSlice = styled(motion.div)({
   background: 'linear-gradient(135deg, #b4afd2 0%, #ded4f1 100%)',
   zIndex: 0,
   boxShadow: '0 0 80px 60px #b4afd2',
+  '@media (max-width: 768px)': {
+    boxShadow: '0 0 40px 30px #b4afd2',
+  },
 });
 
 const TeamSection = styled(Box)({
   position: 'relative',
   padding: '100px 0',
+  '@media (max-width: 768px)': {
+    padding: '60px 0',
+  },
 });
 
 const MemberPair = styled(Box)({
@@ -83,6 +99,12 @@ const ImageContainer = styled(Box)({
   height: '550px',
   overflow: 'hidden',
   borderRadius: '20px 20px 0 0',
+  '@media (max-width: 768px)': {
+    height: '400px',
+  },
+  '@media (max-width: 480px)': {
+    height: '350px',
+  },
 });
 
 const MemberImage = styled('img')({
@@ -115,6 +137,12 @@ const MemberName = styled(Typography)({
   fontWeight: 700,
   color: '#322343',
   marginBottom: '10px',
+  '@media (max-width: 768px)': {
+    fontSize: '1.8rem',
+  },
+  '@media (max-width: 480px)': {
+    fontSize: '1.5rem',
+  },
 });
 
 const MemberBio = styled(Typography)({

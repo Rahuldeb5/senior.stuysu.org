@@ -4,6 +4,6 @@
 
 .content {
   display: flex;
-  flex-direction: column; /* Stack sections vertically */
+  flex-direction: column;
   width: 100%;
 }

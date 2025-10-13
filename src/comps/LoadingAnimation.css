@@ -57,13 +57,13 @@
 
 .text {
   font-family: 'Helvetica Neue', sans-serif;
-  font-size: 4rem;
+  font-size: clamp(2rem, 8vw, 4rem);
   font-weight: bold;
   color: #fef3e1;
 }
 
 .stuyvesant-wrapper, .senior-caucus-wrapper {
-  height: 4rem;
+  height: clamp(2rem, 8vw, 4rem);
   display: flex;
   align-items: center;
 }
@@ -86,8 +86,8 @@
 
 .loading-container.circle .animation-element {
   border-radius: 50%;
-  width: 50px;
-  height: 50px;
+  width: clamp(30px, 8vw, 50px);
+  height: clamp(30px, 8vw, 50px);
   background-color: #fef3e1;
   animation: circleTransform 1.2s forwards cubic-bezier(0.68, -0.55, 0.27, 1.55);
 }
@@ -100,8 +100,8 @@
   }
   100% {
     border-radius: 50%;
-    width: 50px;
-    height: 50px;
+    width: clamp(30px, 8vw, 50px);
+    height: clamp(30px, 8vw, 50px);
     background-color: #fef3e1;
   }
 }
@@ -112,8 +112,8 @@
 
 @keyframes abstractTransition {
   0% {
-    width: 50px;
-    height: 50px;
+    width: clamp(30px, 8vw, 50px);
+    height: clamp(30px, 8vw, 50px);
     border-radius: 100%;
     transform: rotate(0deg) scale(1);
     background-color: #fef3e1;

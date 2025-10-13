@@ -9,6 +9,20 @@
   font-weight: 1000 !important;
 }
 
+@media (max-width: 768px) {
+  .navbar {
+    top: 15px;
+    right: 15px;
+  }
+}
+
+@media (max-width: 480px) {
+  .navbar {
+    top: 10px;
+    right: 10px;
+  }
+}
+
 .menu-button {
   display: flex;
   justify-content: flex-end;
@@ -63,6 +77,14 @@
   background-position: 0 100%;
   transition: background-size 0.25s ease-in, transform 0.2s ease;
   cursor: none;
+  -webkit-tap-highlight-color: transparent;
+  touch-action: manipulation;
+}
+
+@media (hover: none) {
+  .menu-item .MuiLink-root {
+    cursor: pointer;
+  }
 }
 
 .menu-item .MuiLink-root:hover {
@@ -77,6 +99,8 @@
   border: 1px solid #6c5f83;
   transform: scale(0.95);
   cursor: none;
+  -webkit-tap-highlight-color: transparent;
+  touch-action: manipulation;
 }
 
 .menu-button .MuiIconButton-root:hover {
@@ -84,6 +108,12 @@
   transform: scale(1);
   transition: all 0.2s ease;
   cursor: none;
+}
+
+@media (hover: none) {
+  .menu-button .MuiIconButton-root {
+    cursor: pointer;
+  }
 }
 
 .menu-button .MuiSvgIcon-root {
