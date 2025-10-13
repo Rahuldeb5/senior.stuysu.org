@@ -14,7 +14,7 @@ export default function MyCalendar() {
     const [isLoading, setIsLoading] = useState(true);
     const [error, setError] = useState("");
     const [modalOpen, setModalOpen] = useState(false);
-    const [modalData, setModalData] = useState({ title: '', time: '', description: '' });
+    const [modalData, setModalData] = useState({ title: '', time: '', description: '', link: '' });
 
     const API_KEY = import.meta.env.VITE_CALENDAR_API_KEY;
     const CALENDAR_ID = import.meta.env.VITE_CALENDAR_ID;
@@ -37,16 +37,28 @@ export default function MyCalendar() {
     const showEventModal = (event) => {
         const time = timeFormat(event.start) === timeFormat(event.end) ? `All Day` : `${timeFormat(event.start)} - ${timeFormat(event.end)}`;
         const day = dayFormat(event.start) === dayFormat(event.end) ? dayFormat(event.start) : `${dayFormat(event.start)} - ${dayFormat(event.end)}`;    
+      
+        let description = event.extendedProps.description || "";
 
-        const description = event.extendedProps.description || "";
-
+        const match = description.match(/https:\/\/docs\.google\.com\/forms\/[^\s"']+/i);
+        const actualLink = match ? match[0] : null;
+      
+        if (description) {
+          description = description
+            .replace(/<a[^>]*href="[^"]*zoom\.us[^"]*"[^>]*>.*?<\/a>/gi, '')
+            .replace(/(https:\/\/[a-z0-9.-]*zoom\.us\/[^\s]+)/gi, '')
+            .replace(/\s+/g, ' ')
+            .trim();
+        }
+      
         setModalData({
-            title: event.title,
-            time: `${day}: ${time}`,
-            description: description
+          title: event.title,
+          time: `${day}: ${time}`,
+          description: description,
+          actualLink: actualLink || ''
         });
         setModalOpen(true);
-    };
+    };      
 
     const closeModal = () => {
         setModalOpen(false);
@@ -113,13 +125,28 @@ export default function MyCalendar() {
             <Modal open={modalOpen} onClose={closeModal} className="modal">
                 <Box className="modal-content">
                     <Box className="modal-header">
-                        <Typography variant="h2" id="modalTitle">{modalData.title}</Typography>
                         <Typography className="close" onClick={closeModal}>&times;</Typography>
+                        <Typography variant="h2" id="modalTitle">{modalData.title}</Typography>
                     </Box>
                     <Box className="modal-body">
                         <Typography id="modalTime">{modalData.time}</Typography>
-                        {modalData.description && (
-                            <Typography id="modalDescription">{modalData.description}</Typography>
+
+                        {modalData.actualLink && (
+                            <Box className="modal-actions" sx={{ mt: 2, textAlign: "center" }}>
+                            <Button
+                                variant="contained"
+                                color="primary"
+                                onClick={() => window.open(modalData.actualLink, "_blank")}
+                                sx={{
+                                background: "linear-gradient(135deg, #2D8CFF, #1E6FDD)",
+                                textTransform: "none",
+                                borderRadius: "6px",
+                                fontWeight: 500
+                                }}
+                            >
+                                Link
+                            </Button>
+                            </Box>
                         )}
                     </Box>
                 </Box>
