@@ -78,8 +78,8 @@
 .hero-quote { position: relative; text-align: center; max-width: 700px; padding: 0 20px; opacity: 0; transform: translateY(30px); transition: all 1.5s cubic-bezier(0.4, 0, 0.2, 1); }
 .hero-quote.visible { opacity: 1; transform: translateY(0); }
 .quote-icon { font-size: 3rem; color: rgba(255, 242, 226, 0.3); margin-bottom: 20px; }
-.quote-text { color: #fff2e2; font-family: 'Manrope', sans-serif; font-style: italic; font-weight: 300; line-height: 1.6; margin-bottom: 20px; font-size: clamp(1rem, 3.5vw, 1.5rem); }
-.quote-author { color: rgba(255, 242, 226, 0.7); font-size: 1.1rem; font-family: 'Manrope', sans-serif; }
+.quote-text { color: #fff2e2; font-family: 'Montserrat', sans-serif; font-style: italic; font-weight: 300; line-height: 1.6; margin-bottom: 20px; font-size: clamp(1rem, 3.5vw, 1.5rem); }
+.quote-author { color: rgba(255, 242, 226, 0.7); font-size: 1.1rem; font-family: 'Montserrat', sans-serif; }
 
 @media (max-width: 768px) {
   .hero-quote { padding: 0 15px; max-width: 90%; }
