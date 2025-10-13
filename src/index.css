@@ -23,6 +23,21 @@ html, body {
   -moz-osx-font-smoothing: grayscale;
 }
 
+* {
+  font-family: 'Montserrat', sans-serif !important;
+}
+
+.MuiTypography-root,
+.MuiButton-root,
+.MuiCard-root,
+.MuiBox-root,
+.MuiContainer-root,
+.MuiGrid-root,
+.MuiIconButton-root,
+.MuiLink-root {
+  font-family: 'Montserrat', sans-serif !important;
+}
+
 a {
   font-weight: 500;
   color: #646cff;
