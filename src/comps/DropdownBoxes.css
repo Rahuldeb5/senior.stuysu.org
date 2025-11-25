@@ -42,6 +42,16 @@
   align-items: center;
   overflow: hidden !important;
 }
+
+.dropdown {
+  /* space above the first (September) magazine block */
+  margin-top: 2.5rem;
+}
+
+.dropdown-item + .dropdown-item {
+  /* space between each magazine block */
+  margin-top: 2.5rem;
+}
 .dropdown-item-container {
   padding: 20px;
   border-radius: 1em;

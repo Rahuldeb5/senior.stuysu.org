@@ -37,7 +37,7 @@ const DropdownBoxes = () => {
                   </Typography>
                   <embed
                     className="magazine-pdf"
-                    src={item.url}
+                    src={`${item.url}#toolbar=0&navpanes=0`}
                     width="600em"
                     height="600em"
                   />

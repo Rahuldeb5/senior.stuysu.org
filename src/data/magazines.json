@@ -5,6 +5,12 @@
       "title": "September",
       "color": "#ffecd4",
       "textcolor": "black"
+    },
+    {
+      "url": "/pdfs/magazines/senior/november.pdf",
+      "title": "November",
+      "color": "#e09e58",
+      "textcolor": "black"
     }
   ]
 }

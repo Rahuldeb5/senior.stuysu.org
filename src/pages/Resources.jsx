@@ -48,6 +48,10 @@ const docs = [
     {
       title: "October College Interviews (2025)",
       src: "https://docs.google.com/document/d/1UBORDo1GSPVMnCOd6Q28lZa9rI79PCKqGq3kNpDIs3o/edit?tab=t.0#heading=h.9nwa1ou8w388"
+    },
+    {
+      title: "Let’s Talk About College Newsletter (PDF)",
+      src: "/pdfs/lets-talk-about-college-newsletter.pdf#toolbar=0&navpanes=0"
     }
   ];
 

@@ -8,6 +8,9 @@ const EmbeddedDoc = ({ title, src }) => {
     setIsOpen(!isOpen);
   };
 
+  const isLocalPdf = src.endsWith('.pdf') || src.startsWith('/pdfs/');
+  const pdfSrc = isLocalPdf ? `${src}#toolbar=0&navpanes=0` : src;
+
   return (
     <div className={`doc-item ${isOpen ? 'open' : ''}`}>
       <h3 onClick={toggleOpen}>
@@ -16,11 +19,19 @@ const EmbeddedDoc = ({ title, src }) => {
       </h3>
       {isOpen && (
         <div className="doc-iframe-container">
-          <iframe
-            className="doc-iframe"
-            src={src}
-            allow="fullscreen"
-          ></iframe>
+          {isLocalPdf ? (
+            <embed
+              className="doc-iframe"
+              src={pdfSrc}
+              type="application/pdf"
+            />
+          ) : (
+            <iframe
+              className="doc-iframe"
+              src={src}
+              allow="fullscreen"
+            ></iframe>
+          )}
         </div>
       )}
     </div>
